@@ -1,0 +1,30 @@
+.pop-services {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    margin: 10px auto;
+}
+.pop-service-facial {
+    border: solid 1px black;
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pop-service-body {
+    border: solid 1px black;
+    width: 25%;
+    margin-left: 20px;
+    margin: 0 auto;
+}
+
+.pop-service-hair {
+    border: solid 1px black;
+    width: 25%;
+    margin-left: 20px;
+    margin: 0 auto;
+}
+
+.facial-icon {
+    width: 30%;
+}

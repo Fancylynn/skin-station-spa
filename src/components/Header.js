@@ -6,8 +6,8 @@ import styles from "../styles/Header.css";
 
 const Header = () => {
   return(
-    <div className="header">
-      <h1 className="header-title">Skin Spa Station</h1>
+    <div styleName="header">
+      <h1 >Skin Spa Station</h1>
     </div>
   );
 };

@@ -2,9 +2,7 @@ body {
   background: #d5d5d5; 
 }
 
-.header-title {
+.header {
     text-transform: uppercase;
     text-align: center;
-    font-family: arial;
-    color: red;
 }

@@ -1,10 +1,10 @@
 import React, {PropTypes} from "react";
 import cssModules from "react-css-modules";
-import styles from "../styles/Header.css";
+import styles from "../styles/NavBar.css";
 
 const NavBar = props => {
   return(
-    <nav className="navbar">
+    <nav styleName="navbar">
       <button>HOME</button>
       <button>SERVICES</button>
       <button>LOCATIONS</button>
