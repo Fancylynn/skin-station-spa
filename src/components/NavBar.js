@@ -5,13 +5,19 @@ import styles from "../styles/NavBar.css";
 const NavBar = props => {
   return(
     <div styleName="nav-bar">
-      <img styleName="logo" src="img/logo-inside.png" alt="logo icon"/>
+      <ul>
+        <li>
+          <img styleName="logo" src="img/logo-inside.png" alt="logo icon"/>
+        </li>
+      </ul>
       <div styleName="nav-links">
-        <a href="#home">HOME</a>
-        <a>SERVICES</a>
-        <a>LOCATIONS</a>
-        <a>RESERVATION</a>
-        <a>CONTACT US</a>
+        <ul>
+          <li><a>HOME</a></li>
+          <li><a>SERVICES</a></li>
+          <li><a>LOCATIONS</a></li>
+          <li><a>RESERVATION</a></li>
+          <li><a>CONTACT US</a></li>
+        </ul>
       </div>
     </div>
   );
