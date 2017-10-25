@@ -4,13 +4,16 @@ import styles from "../styles/NavBar.css";
 
 const NavBar = props => {
   return(
-    <nav styleName="navbar">
-      <button>HOME</button>
-      <button>SERVICES</button>
-      <button>LOCATIONS</button>
-      <button>RESERVATION</button>
-      <button>CONTACT US</button>
-    </nav>
+    <div styleName="nav-bar">
+      <img styleName="logo" src="img/logo-inside.png" alt="logo icon"/>
+      <div styleName="nav-links">
+        <a href="#home">HOME</a>
+        <a>SERVICES</a>
+        <a>LOCATIONS</a>
+        <a>RESERVATION</a>
+        <a>CONTACT US</a>
+      </div>
+    </div>
   );
 };
 
