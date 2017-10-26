@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from "react";
 import SliderItem from "./SliderItem";
 import SliderDots from "./SliderDots";
-import SliderArrows from "./SliderArrows";
+// import SliderArrows from "./SliderArrows";
 import cssModules from "react-css-modules";
 import styles from "../styles/SlidingWindowPictures.css";
 
@@ -53,12 +53,19 @@ class Slider extends Component {
 
   render() {
     const {pictures} = this.props;
+    const total = pictures.length;
     return (
-      <div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-        <SliderItem pictures={pictures}/>
+      <div>
+        <div styleName="slider-window-images" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+          <SliderItem pictures={pictures}/>
+        </div>
+        <div styleName="slider-window-dots">
+          <SliderDots pictureMoveForward={this.pictureMoveForward} total={total} nowLocal={this.state.nowLocal}/>
+        </div>
       </div>
     );
   }
 }
 
 export default cssModules(Slider, styles);
+{ /* <SliderDots pictureMoveForward={this.pictureMoveForward} total={pictures.length} nowLocal={this.state.nowLocal}/>*/ }

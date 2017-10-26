@@ -1,29 +1,37 @@
-import React, {Component} from "react";
+import React, {Component, PropTypes} from "react";
+import cssModules from "react-css-modules";
+import styles from "../styles/SlidingWindowPictures.css";
 
-export default class SliderDots extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
-  handleDotClick = (i) => {
-    const option = i - this.props.nowLocal;
-    this.props.turn(option);
-  }
+class SliderDots extends Component {
+
+  static propTypes = {
+    pictureMoveForward: PropTypes.func.isRequired,
+    total: PropTypes.number.isRequired,
+    nowLocal: PropTypes.number.isRequired
+  };
+
+  // handleDotClick = (i, total) => {
+  //   const option = i - this.props.nowLocal;
+  //   this.props.pictureMoveForward(option, total);
+  // }
+
   render() {
     const dotNodes = [];
-    const {count, nowLocal} = this.props;
-    for(let i = 0; i < count; i++) {
+    const {total, nowLocal} = this.props;
+    for(let i = 0; i < total; i++) {
       dotNodes[i] = (
         <span
             key={"dot" + i}
-            className={"slider-dot" + (i === nowLocal ? " slider-dot-selected" : "")}
-            onClick={this.handleDotClick(i)}
+            styleName="slider-dot"
         />
       );
     }
     return (
-      <div className="slider-dots-wrap">
+      <div styleName="slider-dots-wrap">
         {dotNodes}
       </div>
     );
   }
 }
+
+export default cssModules(SliderDots, styles);

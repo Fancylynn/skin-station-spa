@@ -3,6 +3,8 @@
     height: 200px;
     display: flex;
     margin: 10px auto;
+    position: absolute;
+    background-color: pink;
 }
 .pop-service-facial {
     border: solid 1px black;
