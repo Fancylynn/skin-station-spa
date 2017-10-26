@@ -1,13 +1,30 @@
 import React from "react";
+// import {render} from "react-dom";
+import Slider from "./Slider";
 import cssModules from "react-css-modules";
 import styles from "../styles/SlidingWindowPictures.css";
 
-// @cssModules(styles)
+const IMAGE_DATA = [
+  {
+    src: "img/coverpage1.jpg",
+    alt: "images-1"
+  },
+  {
+    src: "img/coverpage2.jpg",
+    alt: "images-2"
+  },
+  {
+    src: "img/coverpage3.jpg",
+    alt: "images-3"
+  }
+];
 
 const SlidingWindowPictures = () => {
   return(
     <div>
-      <img styleName="cover-page" src="img/coverPage.jpg" alt="Cover Page"/>
+      <Slider
+          pictures={IMAGE_DATA}
+      />
     </div>
   );
 };
