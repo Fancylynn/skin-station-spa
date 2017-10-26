@@ -53,30 +53,12 @@ class Slider extends Component {
 
   render() {
     const {pictures} = this.props;
-    const pictureDisplay = pictures.map((picture, idx) => {
-      return <SliderItem picture={picture} key={idx}/>;
-    });
     return (
-      <div styleName="slider-window" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-        <ul style={{
-          left: -100 * this.state.nowLocal + "%"
-        }}
-        >
-          {pictureDisplay}
-        </ul>
+      <div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+        <SliderItem pictures={pictures}/>
       </div>
     );
   }
 }
 
 export default cssModules(Slider, styles);
-{ /* <div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-        <SliderItem picture={pictures[this.state.nowLocal]}/>
-</div>*/ }
-
-{ /* <div style={{
-          left: -100 * this.state.nowLocal + "%",
-          transitionDuration: 2 + "s",
-          width: 3 * 100 + "%"
-        }}
->*/ }
