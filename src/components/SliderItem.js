@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react";
+import React, { Component, PropTypes } from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/SlidingWindowPictures.css";
 
@@ -8,7 +8,7 @@ class SliderItem extends Component {
   };
 
   render() {
-    const {picture} = this.props;
+    const { picture } = this.props;
     return (
       <div styleName="slider-item">
         <img styleName="slider-image" src={picture.src} alt={picture.alt}/>
