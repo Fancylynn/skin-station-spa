@@ -1,32 +1,58 @@
-.pop-services {
+.pop-service-container {
     width: 100%;
-    height: 200px;
-    display: flex;
-    margin: 10px auto;
-    position: absolute;
-    background-color: pink;
+    height: 100px;
+    position: relative;
 }
-.pop-service-facial {
-    border: solid 1px black;
-    width: 25%;
-    margin: 0 auto;
+
+.pop-service-row {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pop-service-title {
+    font-family: 'Muli',sans-serif;
+    color: #6f6f6f;
+    font-size: 36px;
+    font-weight: 300;
+    display: block;
     text-align: center;
+    margin-top: 30px;
 }
 
-.pop-service-body {
-    border: solid 1px black;
-    width: 25%;
-    margin-left: 20px;
-    margin: 0 auto;
+.pop-service-left{
+    position: relative;
+    width: 33.33333%;
+    margin-left: 10%;
+    margin-bottom: 30px;
 }
 
-.pop-service-hair {
-    border: solid 1px black;
-    width: 25%;
-    margin-left: 20px;
-    margin: 0 auto;
+.pop-service-leftrow {
+    width: 70%;
+    text-align: right;
+    margin-top: 50px;
 }
 
-.facial-icon {
-    width: 30%;
+.pop-service-leftrow:hover {
+    transform: translatex(50px);
+    transition: 1s;
+}
+
+.pop-service-leftrow h2 {
+    font-size: 27px;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: 'Muli',sans-serif;
+    font-style: normal;
+    color: #222;
+    text-rendering: optimizeLegibility;
+}
+
+.pop-service-leftrow p {
+    font-family: 'Muli',sans-serif;
+    text-rendering: optimizeLegibility;
+    display: block;
 }
