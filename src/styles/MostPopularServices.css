@@ -41,8 +41,22 @@
 
 .pop-service-leftrow:hover {
     transform: translatex(50px);
-    transition: 1s;
+    transition: 2s;
     cursor: pointer;
+}
+
+.pop-service-leftrow:hover .pop-service-arrow img {
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    visibility: visible;
+}
+
+.pop-service-rightrow:hover .pop-service-arrow-reverse img {
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    visibility: visible;
 }
 
 .pop-service-leftrow h2 {
@@ -63,26 +77,20 @@
 }
 
 
-.pop-service-arrow img  {
+.pop-service-arrow img {
     height: 30px;
     margin-left: 5px;
     margin-top: 10px;
-}
-
-.pop-service-arrow-reverse img{
-    height: 30px;
-    margin-right: 5px;
-    margin-top: 10px;
-    transform: rotate(180deg); 
-}
-
-/*.pop-service-arrow img:hover::before {
     visibility: hidden;
 }
 
-.pop-service-arrow img:hover::after {
-    visibility: visible;
-}*/
+.pop-service-arrow-reverse img {
+    height: 30px;
+    margin-right: 5px;
+    margin-top: 10px;
+    transform: rotate(180deg);
+    visibility: hidden;
+}
 
 .pop-service-right{
     position: relative;
@@ -100,7 +108,7 @@
 
 .pop-service-rightrow:hover {
     transform: translatex(-50px);
-    transition: 1s;
+    transition: 2s;
     cursor: pointer;
 }
 
