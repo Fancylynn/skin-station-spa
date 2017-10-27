@@ -22,7 +22,7 @@ class SliderDots extends Component {
       dotNodes[i] = (
         <span
             key={"dot" + i}
-            styleName="slider-dot"
+            styleName={i === nowLocal ? "slider-dot-selected" : "slider-dot"}
         />
       );
     }

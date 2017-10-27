@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from "react";
 import SliderItem from "./SliderItem";
 import SliderDots from "./SliderDots";
-// import SliderArrows from "./SliderArrows";
 import cssModules from "react-css-modules";
 import styles from "../styles/SlidingWindowPictures.css";
 
@@ -43,7 +42,7 @@ class Slider extends Component {
     const {pictures} = this.props;
     this.interval = setInterval(() => {
       this.pictureMoveForward(1, pictures.length);
-    }, 2000);
+    }, 4700);
   }
 
   pausePlayPictures = () => {
@@ -56,7 +55,7 @@ class Slider extends Component {
     const total = pictures.length;
     return (
       <div>
-        <div styleName="slider-window-images" onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+        <div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
           <SliderItem pictures={pictures}/>
         </div>
         <div styleName="slider-window-dots">
