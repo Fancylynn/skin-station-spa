@@ -11,16 +11,31 @@ const PopService = () => {
         <h1 styleName="pop-service-title">Most Popular Services</h1>
         <div styleName="pop-service-left">
           <div styleName="pop-service-leftrow">
-            <h2>Massage</h2>
-            <p> Massage therapy for relaxation or for a variety of health conditions </p>
+            <div>
+              <h2>Massage</h2>
+              <p> Massage therapy for relaxation or for a variety of health conditions </p>
+            </div>
+            <div styleName="pop-service-arrow">
+              <img src="img/arrow-icon.png" alt="arrow icon"/>
+            </div>
           </div>
           <div styleName="pop-service-leftrow">
-            <h2>Scrubs And Wraps</h2>
-            <p> Healthy and natural method to cleanse and exfoliate your entire body </p>
+            <div>
+              <h2>Scrubs And Wraps</h2>
+              <p> Healthy and natural method to cleanse and exfoliate your entire body </p>
+            </div>
+            <div styleName="pop-service-arrow">
+              <img src="img/arrow-icon.png" alt="arrow icon"/>
+            </div>
           </div>
           <div styleName="pop-service-leftrow">
-            <h2>Facial Add-On Mask</h2>
-            <p> Massage therapy for relaxation or for a variety of health conditions </p>
+            <div>
+              <h2>Facial Add-On Mask</h2>
+              <p> Massage therapy for relaxation or for a variety of health conditions </p>
+            </div>
+            <div styleName="pop-service-arrow">
+              <img src="img/arrow-icon.png" alt="arrow icon"/>
+            </div>
           </div>
         </div>
       </div>

@@ -33,11 +33,13 @@
     width: 70%;
     text-align: right;
     margin-top: 50px;
+    display: flex;
 }
 
 .pop-service-leftrow:hover {
     transform: translatex(50px);
     transition: 1s;
+    cursor: pointer;
 }
 
 .pop-service-leftrow h2 {
@@ -56,3 +58,18 @@
     text-rendering: optimizeLegibility;
     display: block;
 }
+
+
+.pop-service-arrow img  {
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+/*.pop-service-arrow img:hover::before {
+    visibility: hidden;
+}
+
+.pop-service-arrow img:hover::after {
+    visibility: visible;
+}*/
