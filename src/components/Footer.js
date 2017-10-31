@@ -15,11 +15,26 @@ class Footer extends Component {
         </div>
         <div styleName="footer-row">
           <h2>Social</h2>
-          <h4> Facebook</h4>
-          <h4> Twitter</h4>
-          <h4> Google Plus</h4>
-          <h4> Pinterest</h4>
-          <h4> Instagram</h4>
+          <div styleName="social-icon">
+            <img src="img/facebook-icon.png" alt="facebook-icon"/>
+            <h4> Facebook</h4>
+          </div>
+          <div styleName="social-icon">
+            <img src="img/twitter-icon.png" alt="twitter-icon"/>
+            <h4> Twitter</h4>
+          </div>
+          <div styleName="social-icon">
+            <img src="img/google-icon.png" alt="google-icon"/>
+            <h4> Google Plus</h4>
+          </div>
+          <div styleName="social-icon">
+            <img src="img/pinterest-icon.png" alt="pinterest-icon"/>
+            <h4> Pinterest</h4>
+          </div>
+          <div styleName="social-icon">
+            <img src="img/instagram-icon.png" alt="instagram-icon"/>
+            <h4> Instagram</h4>
+          </div>
         </div>
         <div styleName="footer-row">
           <h2>Contact</h2>
