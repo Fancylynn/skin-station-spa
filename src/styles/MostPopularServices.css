@@ -1,6 +1,6 @@
 .pop-service-container {
     width: 100%;
-    height: 100px;
+    height: 600px;
     position: relative;
 }
 
@@ -135,4 +135,5 @@
     width: 33.333%;
     height: 500px;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
