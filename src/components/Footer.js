@@ -42,6 +42,13 @@ class Footer extends Component {
           <h4> Privacy Policy</h4>
           <h4> FAQ</h4>
         </div>
+        <div styleName="newsletter-container">
+          <h2>NEWSLETTER</h2>
+          <form>
+            <input styleName="email" type="text" placeholder="Email Address"/>
+            <button>Subscribe</button>
+          </form>
+        </div>
       </div>
     );
   }
