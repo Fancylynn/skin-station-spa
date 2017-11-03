@@ -1,18 +1,17 @@
-import React from 'react';
-// import { Provider } from 'react-redux';
-// import { createStore } from 'redux';
-import { render } from 'react-dom';
-import Homepage from './containers/Homepage';
-// import MoviesReducer from './src/reducers/movies';
+import React from "react";
+import {Provider} from "react-redux";
+import {createStore} from "redux";
+import {render} from "react-dom";
+import App from "./App";
+// import Homepage from "./containers/Homepage";
 
-// const store = createStore (
-// 	MoviesReducer,
-// 	window.devToolsExtension && window.devToolsExtension()
-// );
+const store = createStore(
+	window.devToolsExtension && window.devToolsExtension()
+);
 
 render(
-	// <Provider store={store}>
-	<Homepage />,
-	// </Provider>,
-	document.getElementById('container')
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById("container")
 );

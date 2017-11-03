@@ -1,6 +1,8 @@
 import React, {PropTypes} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/NavBar.css";
+import {Router, Route, browseHistory} from "react-router";
+import {Link} from "react-router";
 
 const NavBar = props => {
   return(
@@ -11,11 +13,12 @@ const NavBar = props => {
         </ul>
         <div styleName="nav-links">
           <ul>
-            <li><a>HOME</a></li>
-            <li><a>SERVICES</a></li>
-            <li><a>LOCATIONS</a></li>
-            <li><a>RESERVATION</a></li>
-            <li><a>CONTACT US</a></li>
+            <li><Link styleName="links" to="/">HOME</Link></li>
+            <li><Link styleName="links">SERVICES</Link></li>
+            <li><Link styleName="links">LOCATIONS</Link></li>
+            <li><Link styleName="links">RESERVATION</Link></li>
+            <li><Link styleName="links">CONTACT US</Link></li>
+            <li><Link styleName="links" to="/signup">SIGN IN</Link></li>
           </ul>
         </div>
       </div>
