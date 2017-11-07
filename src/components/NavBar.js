@@ -1,7 +1,6 @@
 import React, {PropTypes} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/NavBar.css";
-import {Router, Route, browseHistory} from "react-router";
 import {Link} from "react-router";
 
 const NavBar = props => {
