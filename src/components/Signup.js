@@ -11,7 +11,7 @@ class Signup extends Component {
   onUserNameChange = (e) => {
     const userName = e.target.value;
     if (userName !== "") {
-        this.setState({inputUserName: true});
+      this.setState({inputUserName: true});
     } else {
       this.setState({inputUserName: false});
     }
@@ -33,29 +33,39 @@ class Signup extends Component {
         <form>
           <div styleName="input-wrapper" title="Username / email">
             <div styleName="input-area">
-              <label styleName={this.state.inputUserName ? "input-name-not-empty":"input-name-empty"}>
+              <label styleName={this.state.inputUserName ?
+                                "input-name-not-empty"
+                                :
+                                "input-name-empty"}
+              >
                   Username / email
               </label>
               <input styleName="input-text-box"
-                       type="text"
-                       placeholder="Username / email"
-                       maxLength="256"
-                       onChange={this.onUserNameChange}
-                       required/>
+                  type="text"
+                  placeholder="Username / email"
+                  maxLength="256"
+                  onChange={this.onUserNameChange}
+                  required
+              />
               <div styleName="input-underline"/>
             </div>
           </div>
           <div styleName="input-wrapper" title="Password">
             <div styleName="input-area">
-              <label styleName={this.state.inputPassword ? "input-password-not-empty":"input-password-empty"}>
+              <label styleName={this.state.inputPassword ?
+                                "input-password-not-empty"
+                                :
+                                "input-password-empty"}
+              >
                   Password
               </label>
               <input styleName="input-text-box"
-                      type="text"
-                      placeholder="Password"
-                      maxLength="256"
-                      onChange={this.onPasswordChange}
-                      required/>
+                  type="text"
+                  placeholder="Password"
+                  maxLength="256"
+                  onChange={this.onPasswordChange}
+                  required
+              />
               <div styleName="input-underline"/>
             </div>
           </div>

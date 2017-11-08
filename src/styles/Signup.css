@@ -84,15 +84,20 @@ form {
     text-decoration: none;
     font-weight: bold;
     font-size: 10px;
+    letter-spacing: 0.5px;
 }
 
 .no-account {
     font-size: 10px;
-    margin-left: 30%;
+    margin-left: 20%;
+    letter-spacing: 0.5px;
+    font-weight: bold;
 }
 
 .input-name-not-empty {
     opacity: 1.0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
 }
 
 .input-name-empty {
@@ -100,14 +105,11 @@ form {
 }
 
 .input-password-not-empty {
-    visibility: visible;
-    transform-origin: left top;
-    transition: color 200ms ease, transform 200ms ease;
-    will-change: transform;
-    pointer-events: none;
-    opacity: 1;
+    opacity: 1.0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
 }
 
 .input-password-empty {
-    visibility: hidden;
+    opacity: 0;
 }
