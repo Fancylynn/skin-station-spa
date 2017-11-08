@@ -3,6 +3,29 @@ import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
 
 class Signup extends Component {
+  state = {
+    inputUserName: false,
+    inputPassword: false
+  };
+
+  onUserNameChange = (e) => {
+    const userName = e.target.value;
+    if (userName !== "") {
+        this.setState({inputUserName: true});
+    } else {
+      this.setState({inputUserName: false});
+    }
+  }
+
+  onPasswordChange = (e) => {
+    const password = e.target.value;
+    if (password !== "") {
+      this.setState({inputPassword: true});
+    } else {
+      this.setState({inputPassword: false});
+    }
+  }
+
   render() {
     return (
       <div styleName="sign-in-container">
@@ -10,15 +33,29 @@ class Signup extends Component {
         <form>
           <div styleName="input-wrapper" title="Username / email">
             <div styleName="input-area">
-              <label>Username / email</label>
-              <input styleName="input-text-box" type="text" placeholder="Username / email" maxLength="256" required/>
+              <label styleName={this.state.inputUserName ? "input-name-not-empty":"input-name-empty"}>
+                  Username / email
+              </label>
+              <input styleName="input-text-box"
+                       type="text"
+                       placeholder="Username / email"
+                       maxLength="256"
+                       onChange={this.onUserNameChange}
+                       required/>
               <div styleName="input-underline"/>
             </div>
           </div>
           <div styleName="input-wrapper" title="Password">
             <div styleName="input-area">
-              <label>Password</label>
-              <input styleName="input-text-box" type="text" placeholder="Password" maxLength="256" required/>
+              <label styleName={this.state.inputPassword ? "input-password-not-empty":"input-password-empty"}>
+                  Password
+              </label>
+              <input styleName="input-text-box"
+                      type="text"
+                      placeholder="Password"
+                      maxLength="256"
+                      onChange={this.onPasswordChange}
+                      required/>
               <div styleName="input-underline"/>
             </div>
           </div>

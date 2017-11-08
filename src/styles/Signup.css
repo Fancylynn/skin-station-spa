@@ -91,3 +91,24 @@ form {
     font-size: 10px;
     margin-left: 30%;
 }
+
+.input-name-not-empty {
+    opacity: 1.0;
+}
+
+.input-name-empty {
+    opacity: 0;
+}
+
+.input-password-not-empty {
+    visibility: visible;
+    transform-origin: left top;
+    transition: color 200ms ease, transform 200ms ease;
+    will-change: transform;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.input-password-empty {
+    visibility: hidden;
+}
