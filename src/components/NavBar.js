@@ -13,7 +13,7 @@ const NavBar = props => {
         <div styleName="nav-links">
           <ul>
             <li><Link styleName="links" to="/">HOME</Link></li>
-            <li><Link styleName="links">SERVICES</Link></li>
+            <li><Link styleName="links" to="/services">SERVICES</Link></li>
             <li><Link styleName="links">LOCATIONS</Link></li>
             <li><Link styleName="links">RESERVATION</Link></li>
             <li><Link styleName="links">CONTACT US</Link></li>
