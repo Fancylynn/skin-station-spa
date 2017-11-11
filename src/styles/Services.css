@@ -2,3 +2,71 @@
     width: 100%;
     height: 500px;
 }
+
+.services {
+    text-align: left;
+}
+
+.service-nav {
+    display: flex;
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-family: 'Muli',sans-serif;
+    color: #6f6f6f;
+}
+
+.service-nav-title {
+    font-family: 'Muli',sans-serif;
+    color:  #f6cf46;
+    width: 25%;
+    font-size: 35px;
+    margin-left: 5%;
+}
+
+.service-nav li {
+    margin-left: 5%;
+    list-style: none;
+    cursor: pointer;
+}
+
+.face-item {
+    float: left;
+    width: 25%;
+    height: 400px;
+    margin-left: 5%;
+    margin-bottom: 30px;
+}
+
+.face-img {
+    width: 100%;
+    height: 85%;
+    vertical-align: bottom; 
+}
+
+.price {
+    display: inline-block;
+    background-color: #f6cf46;
+    color: white;
+    font-family: 'Muli',sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    width: 40%;
+    vertical-align: top;
+}
+
+.price span {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.description {
+    display: inline-block;
+    width: 50%;
+    font-family: 'Muli',sans-serif;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-top: 2px;
+}
