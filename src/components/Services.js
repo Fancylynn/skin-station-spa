@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from "react";
 import NavBar from "./NavBar";
 import cssModules from "react-css-modules";
 import styles from "../styles/Services.css";
+import Footer from "../components/Footer";
 
 class Services extends Component {
   state = {
@@ -26,16 +27,42 @@ class Services extends Component {
 
   face = () => {
     return (
-      <div styleName="face-item">
-        <img styleName="face-img" src="img/face1.jpg" alt="face"/>
-        <div styleName="price">
-          {"$54."}
-          <span>00</span>
+      <div styleName="services-display">
+        <div styleName="display-item">
+          <img styleName="display-img" src="img/face1.jpg" alt="face"/>
+          <div styleName="type">
+            <span>Facial</span>
+          </div>
+          <div styleName="description">
+            <p>Deeply cleanse and rejuvenate your complexion</p>
+          </div>
         </div>
-        <div styleName="description">Fantastic facial mask experience</div>
+        <div styleName="display-item">
+          <img styleName="display-img" src="img/face1.jpg" alt="face"/>
+          <div styleName="type">
+            <span>Facial</span>
+          </div>
+          <div styleName="description">
+            <p>Deeply cleanse and rejuvenate your complexion</p>
+          </div>
+        </div>
       </div>
     );
   };
+
+  body = () => {
+    return (
+      <div styleName="display-item">
+        <img styleName="display-img" src="img/body1.jpg" alt="body"/>
+        <div styleName="type">
+          <span>Massage</span>
+        </div>
+        <div styleName="description">
+          <p>Massage therapy for relaxation or for a variety of health conditions</p>
+        </div>
+      </div>
+    );
+  }
 
   render() {
     return (
@@ -51,9 +78,11 @@ class Services extends Component {
             <li onClick={this.displayPackage}>Package</li>
           </ul>
           <div>
-            {this.face()}
+            {this.state.displayMode === "face" && this.face()}
+            {this.state.displayMode === "body" && this.body()}
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }
