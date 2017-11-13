@@ -7,8 +7,7 @@
     text-align: left;
 }
 
-.service-nav {
-    display: flex;
+.service-nav ul {
     font-size: 30px;
     margin-bottom: 30px;
     margin-top: 10px;
@@ -25,10 +24,20 @@
     margin-top: 20px;
 }
 
-.service-nav li {
+.service-nav-li {
+    display: inline-block;
     margin-left: 5%;
     list-style: none;
     cursor: pointer;
+}
+
+.service-nav-li-selected {
+    display: inline-block;
+    margin-left: 5%;
+    list-style: none;
+    cursor: pointer;
+    color: darksalmon;
+    font-weight: bolder;
 }
 
 .services-display {

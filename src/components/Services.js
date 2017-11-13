@@ -111,12 +111,26 @@ class Services extends Component {
         <img styleName="service-img" src="img/services.jpg" alt="services-img"/>
         <div styleName="services">
           <p styleName="service-nav-title">Our Services</p>
-          <ul styleName="service-nav">
-            <li onClick={this.displayFace}>Face</li>
-            <li onClick={this.displayBody}>body</li>
-            <li onClick={this.displayHair}>Hair</li>
-            <li onClick={this.displayPackage}>Package</li>
-          </ul>
+          <div styleName="service-nav">
+            <ul>
+              <li onClick={this.displayFace}
+                  styleName={this.state.displayMode !== "face" ? "service-nav-li" : "service-nav-li-selected"}>
+              Face
+              </li>
+              <li onClick={this.displayBody}
+                  styleName={this.state.displayMode !== "body" ? "service-nav-li" : "service-nav-li-selected"}>
+              Body
+              </li>
+              <li onClick={this.displayHair}
+                  styleName={this.state.displayMode !== "hair" ? "service-nav-li" : "service-nav-li-selected"}>
+              Hair
+              </li>
+              <li onClick={this.displayPackage}
+                  styleName={this.state.displayMode !== "package" ? "service-nav-li" : "service-nav-li-selected"}>
+              Package
+              </li>
+            </ul>
+          </div>
           <div>
             {this.state.displayMode === "face" && <ServiceItem pictures={FACE_DATA}/>}
             {this.state.displayMode === "body" && <ServiceItem pictures={BODY_DATA}/>}
