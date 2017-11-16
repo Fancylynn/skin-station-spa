@@ -4,6 +4,7 @@ import Homepage from "./containers/Homepage";
 import Signup from "./components/Signup";
 import Services from "./components/Services";
 import Locations from "./components/Locations";
+import NotFound from "./compoennts/NotFound";
 
 class App extends PureComponent {
   render() {
@@ -13,6 +14,7 @@ class App extends PureComponent {
         <Route path="/signup" component={Signup}/>
         <Route path="/services" component={Services}/>
         <Route path="/location" component={Locations}/>
+        <Route path="/*" component={NotFound}/>
       </Router>
     );
   }
