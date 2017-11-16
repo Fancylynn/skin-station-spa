@@ -4,7 +4,7 @@ import Homepage from "./containers/Homepage";
 import Signup from "./components/Signup";
 import Services from "./components/Services";
 import Locations from "./components/Locations";
-import NotFound from "./compoennts/NotFound";
+import NotFound from "./components/NotFound";
 
 class App extends PureComponent {
   render() {

@@ -82,6 +82,7 @@
     "react-css-modules": "^3.7.10",
     "react-dom": "^15.5.4",
     "react-dropzone": "^3.13.4",
+    "react-google-maps": "^9.2.2",
     "react-grecaptcha": "^1.1.7",
     "react-hover": "^1.2.0",
     "react-immutable-proptypes": "^2.1.0",

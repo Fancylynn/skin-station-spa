@@ -1,0 +1,10 @@
+.google-map-container {
+    margin-top: 100px;
+    width: 70%;
+    height: 800px;
+}
+
+.google-map {
+    width: 100%;
+    height: 400px;
+}
