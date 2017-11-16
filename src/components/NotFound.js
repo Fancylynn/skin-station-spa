@@ -7,7 +7,7 @@ import cssModules from "react-css-modules";
 const NotFound = props =>
   <div styleName="not-found-page">
     <Link to="/">
-      <img style={{padding: "30px"}} src="img/logo-indise.png" height="100" alt="Skin Spa Station"/>
+      <img style={{padding: "30px"}} src="img/logo-inside.png" height="100" alt="Skin Spa Station"/>
     </Link>
     <h1 style={{textAlign: "center"}}>🤔</h1>
     <h1 style={{textAlign: "center"}}>Page not found</h1>
