@@ -1,7 +1,3 @@
-.back-icon-invisible {
-    visibility: hidden;
-}
-
 .back-icon {
     visibility: visible;
     position: fixed;
@@ -10,4 +6,5 @@
     width: 45px;
     font-size: 24px;
     z-index: 1040;
+    cursor: pointer;
 }

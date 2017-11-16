@@ -51,7 +51,6 @@ class Homepage extends Component {
         <PopService/>
         {!this.state.scrollBarTop &&
           <BackIcon
-              scrollBarTop={this.state.scrollBarTop}
               scrollToTop={this.scrollToTop}
           />
         }
