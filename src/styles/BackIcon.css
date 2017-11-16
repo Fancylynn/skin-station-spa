@@ -1,4 +1,9 @@
+.back-icon-invisible {
+    visibility: hidden;
+}
+
 .back-icon {
+    visibility: visible;
     position: fixed;
     right: 1%;
     bottom: 5%;
