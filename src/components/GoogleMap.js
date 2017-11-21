@@ -19,16 +19,20 @@ const MyMapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={20} defaultCenter={{lat: 40.718282, lng: -73.992011}}>
-    <Marker position={{lat: 40.718282, lng: -73.992011}}/>
+  <GoogleMap
+      defaultZoom={20}
+      defaultCenter={{lat: props.lat, lng: props.lng}}
+      center={{lat: props.lat, lng: props.lng}}
+  >
+    <Marker position={{lat: props.lat, lng: props.lng}}/>
   </GoogleMap>
 ));
 
 const enhance = _.identity;
 
-const ReactGoogleMaps = () => {
+const ReactGoogleMaps = (props) => {
   return (
-    <MyMapComponent key="map"/>
+    <MyMapComponent key="map" lat={props.lat} lng={props.lng}/>
   );
 };
 

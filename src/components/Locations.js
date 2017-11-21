@@ -14,27 +14,27 @@ class Locations extends Component {
   };
 
   onManhattan = () => {
-    this.setState({location: "manhattan"});
+    this.setState({location: "manhattan", lat: 40.718282, lng: -73.992011});
   }
 
   onBrooklyn = () => {
-    this.setState({location: "brooklyn"});
+    this.setState({location: "brooklyn", lat: 40.63536180000001, lng: -74.00892229999999});
   }
 
   onForestAve = () => {
-    this.setState({location: "forestave"});
+    this.setState({location: "forestave", lat: 40.629212, lng: -74.114796});
   }
 
   onOldTown = () => {
-    this.setState({location: "oldtown"});
+    this.setState({location: "oldtown", lat: 40.5960223, lng: -74.08626760000001});
   }
 
   onQueens = () => {
-    this.setState({location: "queens"});
+    this.setState({location: "queens", lat: 40.763572, lng: -73.828104});
   }
 
   onYonkers = () => {
-    this.setState({location: "yonkers"});
+    this.setState({location: "yonkers", lat: 40.98260440000001, lng: -73.8265533});
   }
 
   render() {
