@@ -43,10 +43,11 @@
 .services-display {
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .display-item {
-    float: left;
     width: 25%;
     height: 400px;
     margin-left: 5%;
