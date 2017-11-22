@@ -1,4 +1,4 @@
-import React, {PureComponent, PropTypes} from "react";
+import React, {PureComponent} from "react";
 import {Router, Route, browserHistory} from "react-router";
 import Homepage from "./containers/Homepage";
 import Signup from "./components/Signup";
