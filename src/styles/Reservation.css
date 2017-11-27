@@ -105,3 +105,19 @@
     position: absolute;
     bottom: 20px;
 }
+
+.back-icon {
+    display: flex;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 10%;
+}
+
+.back-icon img{
+    transform:rotate(180deg);
+    color: #FAB89D;
+    line-height: 31px;
+    text-align: left;
+    width: 2%;
+    height: 2%;
+}

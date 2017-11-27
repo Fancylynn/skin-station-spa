@@ -358,6 +358,10 @@ class Reservation extends Component {
     this.setState({calendar: true});
   }
 
+  onBackToServiceBook = () => {
+    this.setState({calendar: false});
+  }
+
   render() {
     return (
       <div>
@@ -432,6 +436,14 @@ class Reservation extends Component {
               onDisplayBookCalender={this.onDisplayBookCalender}
           />}
         </div>
+        {this.state.calendar &&
+          <div>
+            <div styleName="back-icon" onClick={this.onBackToServiceBook}>
+              <img src="img/arrow-icon.png" alt="back icon"/>
+              <p> Back </p>
+            </div>
+        </div>
+        }
         <Footer/>
       </div>
     );
