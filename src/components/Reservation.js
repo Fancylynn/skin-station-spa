@@ -330,7 +330,8 @@ const OTHERS_DATA = [
 
 class Reservation extends Component {
   state = {
-    service: "facial"
+    service: "facial",
+    calendar: false
   }
 
   onFacial = () => {
@@ -353,6 +354,10 @@ class Reservation extends Component {
     this.setState({service: "others"});
   }
 
+  onDisplayBookCalender = () => {
+    this.setState({calendar: true});
+  }
+
   render() {
     return (
       <div>
@@ -360,45 +365,73 @@ class Reservation extends Component {
         <div styleName="reservation-title">
           <h2 styleName="title">Our Services</h2>
         </div>
-        <div styleName="nav-bar">
-          <ul>
-            <li
-                onClick={this.onFacial}
-                styleName={this.state.service === "facial" ? "nav-selected" : "nav-li"}
-            >
-              Facial
-            </li>
-            <li
-                onClick={this.onBody}
-                styleName={this.state.service === "body" ? "nav-selected" : "nav-li"}
-            >
-            Body
-            </li>
-            <li
-                onClick={this.onHair}
-                styleName={this.state.service === "hair" ? "nav-selected" : "nav-li"}
-            >
-            Hair
-            </li>
-            <li
-                onClick={this.onPackage}
-                styleName={this.state.service === "package" ? "nav-selected" : "nav-li"}
-            >
-            Package
-            </li>
-            <li
-                onClick={this.onOthers}
-                styleName={this.state.service === "others" ? "nav-selected" : "nav-li"}
-            >
-            Others
-            </li>
-          </ul>
+        {!this.state.calendar &&
+          <div styleName="nav-bar">
+            <ul>
+              <li
+                  onClick={this.onFacial}
+                  styleName={this.state.service === "facial" ? "nav-selected" : "nav-li"}
+              >
+                Facial
+              </li>
+              <li
+                  onClick={this.onBody}
+                  styleName={this.state.service === "body" ? "nav-selected" : "nav-li"}
+              >
+              Body
+              </li>
+              <li
+                  onClick={this.onHair}
+                  styleName={this.state.service === "hair" ? "nav-selected" : "nav-li"}
+              >
+              Hair
+              </li>
+              <li
+                  onClick={this.onPackage}
+                  styleName={this.state.service === "package" ? "nav-selected" : "nav-li"}
+              >
+              Package
+              </li>
+              <li
+                  onClick={this.onOthers}
+                  styleName={this.state.service === "others" ? "nav-selected" : "nav-li"}
+              >
+              Others
+              </li>
+            </ul>
+          </div>
+        }
+        <div>
+          {this.state.service === "facial" && !this.state.calendar &&
+            <ReservationItem
+                styleName="reservation-list"
+                services={FACE_DATA}
+                onDisplayBookCalender={this.onDisplayBookCalender}
+            />}
+          {this.state.service === "body" && !this.state.calendar &&
+          <ReservationItem
+              styleName="reservation-list"
+              services={BODY_DATA}
+              onDisplayBookCalender={this.onDisplayBookCalender}
+          />}
+          {this.state.service === "hair" && !this.state.calendar &&
+          <ReservationItem
+              styleName="reservation-list"
+              services={HAIR_DATA}
+              onDisplayBookCalender={this.onDisplayBookCalender}
+          />}
+          {this.state.service === "package" && !this.state.calendar &&
+          <ReservationItem styleName="reservation-list"
+              services={PACKAGE_DATA}
+              onDisplayBookCalender={this.onDisplayBookCalender}
+          />}
+          {this.state.service === "others" && !this.state.calendar &&
+          <ReservationItem
+              styleName="reservation-list"
+              services={OTHERS_DATA}
+              onDisplayBookCalender={this.onDisplayBookCalender}
+          />}
         </div>
-        {this.state.service === "facial" && <ReservationItem styleName="reservation-list" services={FACE_DATA}/>}
-        {this.state.service === "body" && <ReservationItem styleName="reservation-list" services={BODY_DATA}/>}
-        {this.state.service === "hair" && <ReservationItem styleName="reservation-list" services={HAIR_DATA}/>}
-        {this.state.service === "package" && <ReservationItem styleName="reservation-list" services={PACKAGE_DATA}/>}
-        {this.state.service === "others" && <ReservationItem styleName="reservation-list" services={OTHERS_DATA}/>}
         <Footer/>
       </div>
     );

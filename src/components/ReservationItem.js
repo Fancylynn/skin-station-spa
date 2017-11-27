@@ -5,11 +5,12 @@ import cssModules from "react-css-modules";
 
 class Reservation extends Component {
   static propTypes = {
-    services: PropTypes.any.isRequired
+    services: PropTypes.any.isRequired,
+    onDisplayBookCalender: PropTypes.func.isRequired
   };
 
   render() {
-    const {services} = this.props;
+    const {services, onDisplayBookCalender} = this.props;
     const serviceList = services.map((service, idx) => {
       return (
         <div key={idx} id={"top" + idx}>
@@ -18,7 +19,7 @@ class Reservation extends Component {
             <div styleName="service-item-detail">
               <p styleName="service-name">{service.name}</p>
               <p styleName="service-time-and-money">{service.timeAndMoney} </p>
-              <button styleName="book-button">Book Now</button>
+              <button styleName="book-button" onClick={onDisplayBookCalender}>Book Now</button>
             </div>
           </div>
         </div>

@@ -49,6 +49,7 @@
 .service-item-container {
     width: 80%;
     margin: 5px auto;
+    cursor: pointer;
 }
 
 .service-item {
