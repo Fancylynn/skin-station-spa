@@ -80,6 +80,7 @@
     "react": "^15.5.4",
     "react-autosize-textarea": "^0.4.8",
     "react-css-modules": "^3.7.10",
+    "react-day-picker": "^7.0.2",
     "react-dom": "^15.5.4",
     "react-dropzone": "^3.13.4",
     "react-google-maps": "^9.2.2",

@@ -4,6 +4,7 @@ import cssModules from "react-css-modules";
 import NavBar from "../components/NavBar";
 import ReservationItem from "../components/ReservationItem";
 import Footer from "../components/Footer";
+import MyForm from "../components/MyForm";
 
 const FACE_DATA = [
   {
@@ -442,6 +443,7 @@ class Reservation extends Component {
               <img src="img/arrow-icon.png" alt="back icon"/>
               <p> Back </p>
             </div>
+            <MyForm/>
         </div>
         }
         <Footer/>
