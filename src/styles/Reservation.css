@@ -106,18 +106,44 @@
     bottom: 20px;
 }
 
+.service-schedule-online {
+    margin: 0 auto;
+}
+.calendar-title-container {
+    width: 60%;
+    margin-left: 17%;
+    color: #FAB89D;
+    font-weight: border;
+}
+
 .back-icon {
     display: flex;
     cursor: pointer;
     vertical-align: middle;
-    margin-left: 10%;
 }
 
 .back-icon img{
     transform:rotate(180deg);
-    color: #FAB89D;
     line-height: 31px;
     text-align: left;
     width: 2%;
     height: 2%;
+}
+
+
+.calendar-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.calendar {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.calendar-title {
+    font-size: 26px;
+    line-height: 39px;
+    font-family: 'libre baskerville','serif';
+    color: #000000;
 }

@@ -4,7 +4,7 @@ import cssModules from "react-css-modules";
 import NavBar from "../components/NavBar";
 import ReservationItem from "../components/ReservationItem";
 import Footer from "../components/Footer";
-import MyForm from "../components/MyForm";
+import Calendar from "../components/Calendar";
 
 const FACE_DATA = [
   {
@@ -332,7 +332,8 @@ const OTHERS_DATA = [
 class Reservation extends Component {
   state = {
     service: "facial",
-    calendar: false
+    calendar: false,
+    serviceReserved: ""
   }
 
   onFacial = () => {
@@ -355,8 +356,8 @@ class Reservation extends Component {
     this.setState({service: "others"});
   }
 
-  onDisplayBookCalender = () => {
-    this.setState({calendar: true});
+  onDisplayBookCalender = (serviceName) => {
+    this.setState({calendar: true, serviceReserved: serviceName});
   }
 
   onBackToServiceBook = () => {
@@ -438,12 +439,18 @@ class Reservation extends Component {
           />}
         </div>
         {this.state.calendar &&
-          <div>
-            <div styleName="back-icon" onClick={this.onBackToServiceBook}>
-              <img src="img/arrow-icon.png" alt="back icon"/>
-              <p> Back </p>
+          <div styleName="service-schedule-online">
+            <div styleName="calendar-title-container">
+              <div styleName="back-icon" onClick={this.onBackToServiceBook}>
+                <img src="img/arrow-icon.png" alt="back icon"/>
+                <p> Back </p>
+              </div>
+              <p styleName="calendar-title">Schedule Online</p>
+              <p>Time Zone: EST</p>
             </div>
-            <MyForm/>
+            <div styleName="calendar-container">
+              <Calendar styleName="calendar" serviceReserved={this.state.serviceReserved}/>
+            </div>
         </div>
         }
         <Footer/>
