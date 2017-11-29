@@ -15,4 +15,57 @@
     margin-left: 10%;
     border: 1px solid #ccc;
     width: 30%;
+    margin-bottom: 3%;
+}
+
+.calendar-service h2 {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.calendar-service-name {
+    line-height: 33px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 5%;
+    font-size: 22px;
+    font-family: 'open sans','sans-serif';
+    text-align: center;
+}
+
+.calendar-service-price {
+    line-height: 33px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 15px;
+    font-family: 'open sans','sans-serif';
+    text-align: center;
+}
+
+.calendar-service-seperate-line {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-top: 1px solid #8c8b8b;
+}
+
+.calendar-service-date {
+    text-align: center;
+    margin-top: 5%;
+    font-family: 'open sans','sans-serif';
+    color: #000000;
+    font-size: 20px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.calendar-service-button {
+    color: #FFFFFF;
+    background-color: #FAB89D;
+    border: 1px solid#FAB89D;
+    font-size: 16px;
+    line-height: 24px;
+    width: 80%;
+    margin-top: 10px;
+    cursor: pointer;
 }

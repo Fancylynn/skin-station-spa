@@ -111,7 +111,7 @@
 }
 .calendar-title-container {
     width: 60%;
-    margin-left: 17%;
+    margin-left: 20%;
     color: #FAB89D;
     font-weight: border;
 }
@@ -120,6 +120,7 @@
     display: flex;
     cursor: pointer;
     vertical-align: middle;
+    margin-left: 10%;
 }
 
 .back-icon img{
@@ -130,10 +131,12 @@
     height: 2%;
 }
 
+.calendar-title-container {
+    margin-left: 16%;
+}
 
 .calendar-container {
-    width: 70%;
-    margin: 0 auto;
+    margin-left: 24%;
 }
 
 .calendar {

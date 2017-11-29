@@ -19,7 +19,7 @@ class Reservation extends Component {
             <div styleName="service-item-detail">
               <p styleName="service-name">{service.name}</p>
               <p styleName="service-time-and-money">{service.timeAndMoney} </p>
-              <button styleName="book-button" onClick={() => onDisplayBookCalender(service.name)}>Book Now</button>
+              <button styleName="book-button" onClick={() => onDisplayBookCalender(service.name, service.timeAndMoney)}>Book Now</button>
             </div>
           </div>
         </div>

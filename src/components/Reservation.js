@@ -333,7 +333,8 @@ class Reservation extends Component {
   state = {
     service: "facial",
     calendar: false,
-    serviceReserved: ""
+    serviceReserved: "",
+    serviceReservedTimeAndMoney: ""
   }
 
   onFacial = () => {
@@ -356,8 +357,12 @@ class Reservation extends Component {
     this.setState({service: "others"});
   }
 
-  onDisplayBookCalender = (serviceName) => {
-    this.setState({calendar: true, serviceReserved: serviceName});
+  onDisplayBookCalender = (serviceName, serviceTimeAndMoney) => {
+    this.setState({
+      calendar: true,
+      serviceReserved: serviceName,
+      serviceReservedTimeAndMoney: serviceTimeAndMoney
+    });
   }
 
   onBackToServiceBook = () => {
@@ -445,11 +450,16 @@ class Reservation extends Component {
                 <img src="img/arrow-icon.png" alt="back icon"/>
                 <p> Back </p>
               </div>
-              <p styleName="calendar-title">Schedule Online</p>
-              <p>Time Zone: EST</p>
+              <div styleName="calendar-title-container">
+                <p styleName="calendar-title">Schedule Online</p>
+                <p>Time Zone: EST</p>
+              </div>
             </div>
             <div styleName="calendar-container">
-              <Calendar styleName="calendar" serviceReserved={this.state.serviceReserved}/>
+              <Calendar
+                styleName="calendar"
+                serviceReserved={this.state.serviceReserved}
+                serviceReservedTimeAndMoney={this.state.serviceReservedTimeAndMoney}/>
             </div>
         </div>
         }

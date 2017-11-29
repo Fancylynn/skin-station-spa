@@ -31,11 +31,17 @@ class Calendar extends React.Component {
         </div>
         <div styleName="calendar-service">
           <h2> Reservation </h2>
-          <p>{this.props.serviceReserved}</p>
-          <p>
+          <p styleName="calendar-service-name">{this.props.serviceReserved}</p>
+          <p styleName="calendar-service-price">{this.props.serviceReservedTimeAndMoney}</p>
+          <hr styleName="calendar-service-seperate-line"/>
+          <p styleName="calendar-service-date">
             {this.state.selectedDay
                   ? this.state.selectedDay.toLocaleDateString()
                   : "Please select a day 👻"}
+            {this.state.selectedDay ?
+              <button styleName="calendar-service-button"> Next </button> :
+              <div/>
+            }
           </p>
         </div>
       </div>
