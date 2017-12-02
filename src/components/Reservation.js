@@ -332,7 +332,7 @@ const OTHERS_DATA = [
 class Reservation extends Component {
   state = {
     service: "facial",
-    calendar: false,
+    display: "serviceList",
     serviceReserved: "",
     serviceReservedTimeAndMoney: ""
   }
@@ -359,14 +359,18 @@ class Reservation extends Component {
 
   onDisplayBookCalender = (serviceName, serviceTimeAndMoney) => {
     this.setState({
-      calendar: true,
+      display: "calendar",
       serviceReserved: serviceName,
       serviceReservedTimeAndMoney: serviceTimeAndMoney
     });
   }
 
   onBackToServiceBook = () => {
-    this.setState({calendar: false});
+    this.setState({display: "serviceList"});
+  }
+
+  onFinishReservation = () => {
+    this.setState({display: "reservationFinish"});
   }
 
   render() {
@@ -376,7 +380,7 @@ class Reservation extends Component {
         <div styleName="reservation-title">
           <h2 styleName="title">Our Services</h2>
         </div>
-        {!this.state.calendar &&
+        {this.state.display === "serviceList" &&
           <div styleName="nav-bar">
             <ul>
               <li
@@ -389,61 +393,61 @@ class Reservation extends Component {
                   onClick={this.onBody}
                   styleName={this.state.service === "body" ? "nav-selected" : "nav-li"}
               >
-              Body
+                Body
               </li>
               <li
                   onClick={this.onHair}
                   styleName={this.state.service === "hair" ? "nav-selected" : "nav-li"}
               >
-              Hair
+                Hair
               </li>
               <li
                   onClick={this.onPackage}
                   styleName={this.state.service === "package" ? "nav-selected" : "nav-li"}
               >
-              Package
+                Package
               </li>
               <li
                   onClick={this.onOthers}
                   styleName={this.state.service === "others" ? "nav-selected" : "nav-li"}
               >
-              Others
+                Others
               </li>
             </ul>
           </div>
         }
         <div>
-          {this.state.service === "facial" && !this.state.calendar &&
+          {this.state.service === "facial" && this.state.display === "serviceList" &&
             <ReservationItem
                 styleName="reservation-list"
                 services={FACE_DATA}
                 onDisplayBookCalender={this.onDisplayBookCalender}
             />}
-          {this.state.service === "body" && !this.state.calendar &&
-          <ReservationItem
-              styleName="reservation-list"
-              services={BODY_DATA}
-              onDisplayBookCalender={this.onDisplayBookCalender}
-          />}
-          {this.state.service === "hair" && !this.state.calendar &&
-          <ReservationItem
-              styleName="reservation-list"
-              services={HAIR_DATA}
-              onDisplayBookCalender={this.onDisplayBookCalender}
-          />}
-          {this.state.service === "package" && !this.state.calendar &&
-          <ReservationItem styleName="reservation-list"
-              services={PACKAGE_DATA}
-              onDisplayBookCalender={this.onDisplayBookCalender}
-          />}
-          {this.state.service === "others" && !this.state.calendar &&
-          <ReservationItem
-              styleName="reservation-list"
-              services={OTHERS_DATA}
-              onDisplayBookCalender={this.onDisplayBookCalender}
-          />}
+          {this.state.service === "body" && this.state.display === "serviceList" &&
+            <ReservationItem
+                styleName="reservation-list"
+                services={BODY_DATA}
+                onDisplayBookCalender={this.onDisplayBookCalender}
+            />}
+          {this.state.service === "hair" && this.state.display === "serviceList" &&
+            <ReservationItem
+                styleName="reservation-list"
+                services={HAIR_DATA}
+                onDisplayBookCalender={this.onDisplayBookCalender}
+            />}
+          {this.state.service === "package" && this.state.display === "serviceList" &&
+            <ReservationItem styleName="reservation-list"
+                services={PACKAGE_DATA}
+                onDisplayBookCalender={this.onDisplayBookCalender}
+            />}
+          {this.state.service === "others" && this.state.display === "serviceList" &&
+            <ReservationItem
+                styleName="reservation-list"
+                services={OTHERS_DATA}
+                onDisplayBookCalender={this.onDisplayBookCalender}
+            />}
         </div>
-        {this.state.calendar &&
+        {this.state.display === "calendar" &&
           <div styleName="service-schedule-online">
             <div styleName="calendar-title-container">
               <div styleName="back-icon" onClick={this.onBackToServiceBook}>
@@ -457,11 +461,19 @@ class Reservation extends Component {
             </div>
             <div styleName="calendar-container">
               <Calendar
-                styleName="calendar"
-                serviceReserved={this.state.serviceReserved}
-                serviceReservedTimeAndMoney={this.state.serviceReservedTimeAndMoney}/>
+                  styleName="calendar"
+                  serviceReserved={this.state.serviceReserved}
+                  serviceReservedTimeAndMoney={this.state.serviceReservedTimeAndMoney}
+                  onFinishReservation={this.onFinishReservation}
+              />
             </div>
-        </div>
+          </div>
+        }
+        {this.state.display === "reservationFinish" &&
+          <div styleName="reservation-confirmation">
+            <h1>Your reservation has been sent to the system. A confirmation letter will be sent to your email soon.</h1>
+            <h3>{"If you don't receive your confirmation within 24 hours. Please contact us over the phone."} </h3>
+          </div>
         }
         <Footer/>
       </div>

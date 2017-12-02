@@ -39,7 +39,7 @@ class Calendar extends React.Component {
                   ? this.state.selectedDay.toLocaleDateString()
                   : "Please select a day 👻"}
             {this.state.selectedDay ?
-              <button styleName="calendar-service-button"> Next </button> :
+              <button styleName="calendar-service-button" onClick={this.props.onFinishReservation}> Next </button> :
               <div/>
             }
           </p>

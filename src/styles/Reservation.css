@@ -150,3 +150,10 @@
     font-family: 'libre baskerville','serif';
     color: #000000;
 }
+
+.reservation-confirmation {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    color: #FAB89D;
+}
