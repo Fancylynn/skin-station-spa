@@ -1,0 +1,21 @@
+.contact-image {
+    width: 100%;
+}
+
+.company-info {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.company-info h1 {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.company-info p {
+    font-weight: 600;
+    color: #978f7b;
+    margin-bottom: 27px;
+    line-height:150%
+}

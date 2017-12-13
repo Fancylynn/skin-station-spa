@@ -6,7 +6,7 @@ import styles from "../styles/SlidingWindowPictures.css";
 
 const IMAGE_DATA = [
   {
-    src: "img/coverpage1.jpg",
+    src: "img/coverpage1.png",
     alt: "images-1"
   },
   {
