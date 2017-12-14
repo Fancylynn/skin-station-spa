@@ -152,6 +152,7 @@
 .pop-service-middle img {
     animation: picDisplay 2s;
     -webkit-animation: picDisplay 2s; 
+    width: 100%;
 }
 
 @keyframes picDisplay {

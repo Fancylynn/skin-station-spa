@@ -1,7 +1,8 @@
 .sign-in-container {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 8%;
+    margin-bottom: 5%;
     width: 50%;
 }
 
@@ -83,14 +84,13 @@ form {
     color: purple;
     text-decoration: none;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
     letter-spacing: 0.5px;
 }
 
 .no-account {
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 20%;
-    letter-spacing: 0.5px;
     font-weight: bold;
 }
 

@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 class Signup extends Component {
   state = {
@@ -28,55 +30,59 @@ class Signup extends Component {
 
   render() {
     return (
-      <div styleName="sign-in-container">
-        <h1>Great to see you again!</h1>
-        <form>
-          <div styleName="input-wrapper" title="Username / email">
-            <div styleName="input-area">
-              <label styleName={this.state.inputUserName ?
-                                "input-name-not-empty"
-                                :
-                                "input-name-empty"}
-              >
-                  Username / email
-              </label>
-              <input styleName="input-text-box"
-                  type="text"
-                  placeholder="Username / email"
-                  maxLength="256"
-                  onChange={this.onUserNameChange}
-                  required
-              />
-              <div styleName="input-underline"/>
+      <div>
+        <NavBar/>
+        <div styleName="sign-in-container">
+          <h1>Great to see you again!</h1>
+          <form>
+            <div styleName="input-wrapper" title="Username / email">
+              <div styleName="input-area">
+                <label styleName={this.state.inputUserName ?
+                                  "input-name-not-empty"
+                                  :
+                                  "input-name-empty"}
+                >
+                    Username / email
+                </label>
+                <input styleName="input-text-box"
+                    type="text"
+                    placeholder="Username / email"
+                    maxLength="256"
+                    onChange={this.onUserNameChange}
+                    required
+                />
+                <div styleName="input-underline"/>
+              </div>
             </div>
-          </div>
-          <div styleName="input-wrapper" title="Password">
-            <div styleName="input-area">
-              <label styleName={this.state.inputPassword ?
-                                "input-password-not-empty"
-                                :
-                                "input-password-empty"}
-              >
-                  Password
-              </label>
-              <input styleName="input-text-box"
-                  type="text"
-                  placeholder="Password"
-                  maxLength="256"
-                  onChange={this.onPasswordChange}
-                  required
-              />
-              <div styleName="input-underline"/>
+            <div styleName="input-wrapper" title="Password">
+              <div styleName="input-area">
+                <label styleName={this.state.inputPassword ?
+                                  "input-password-not-empty"
+                                  :
+                                  "input-password-empty"}
+                >
+                    Password
+                </label>
+                <input styleName="input-text-box"
+                    type="text"
+                    placeholder="Password"
+                    maxLength="256"
+                    onChange={this.onPasswordChange}
+                    required
+                />
+                <div styleName="input-underline"/>
+              </div>
             </div>
-          </div>
-          <button styleName="login-button">Login</button>
-        </form>
-        <footer styleName="footer">
-          <div>
-            <span styleName="forget-password">Forget Password?</span>
-            <span styleName="no-account">{"Don't have an account? "}<a>Get started</a></span>
-          </div>
-        </footer>
+            <button styleName="login-button">Login</button>
+          </form>
+          <footer styleName="footer">
+            <div>
+              <span styleName="forget-password">Forget Password?</span>
+              <span styleName="no-account">{"Don't have an account? "}<a>Get started</a></span>
+            </div>
+          </footer>
+        </div>
+        <Footer/>
       </div>
     );
   }
