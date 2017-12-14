@@ -131,9 +131,20 @@
 
 
 .pop-service-middle {
-    border: solid 2px black;
+    border: solid 2px #ccc;
     width: 33.333%;
-    height: 500px;
-    margin-top: 30px;
+    height: 400px;
+    margin-top: 40px;
     margin-bottom: 50px;
+}
+
+
+.pop-service-middle p {
+    font-size: 25px;
+    line-height: 26px;
+    color: #d7978c;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 7%;
+    text-indent: 5%;
 }
