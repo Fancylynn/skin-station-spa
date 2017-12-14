@@ -1,0 +1,15 @@
+.policy-title {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.policy-detail {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.policy-detail p {
+    text-indent: 3%;
+    margin-bottom: 2%;
+}

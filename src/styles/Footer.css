@@ -36,6 +36,7 @@
     opacity: .75;
     line-height: 1.5em;
     color: #333;
+    cursor: pointer;
 }
 
 .social-icon {

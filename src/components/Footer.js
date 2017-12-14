@@ -4,6 +4,14 @@ import styles from "../styles/Footer.css";
 import {Link} from "react-router";
 
 class Footer extends Component {
+  openPolicyWindow = (e) => {
+    e.preventDefault();
+    window.open(
+      "../policy",
+      "_blank"
+    );
+  };
+
   render() {
     return (
       <div styleName="footer-container">
@@ -12,7 +20,7 @@ class Footer extends Component {
           <Link styleName="links" to="/contact"><h4>About Us</h4></Link>
           <h4> Blog </h4>
           <Link styleName="links" to="/location"><h4>Location</h4></Link>
-          <h4> Store Policies</h4>
+          <h4 onClick={this.openPolicyWindow}> Store Policies</h4>
         </div>
         <div styleName="footer-row">
           <h2>Social</h2>
