@@ -58,7 +58,7 @@ class Footer extends Component {
         <div styleName="footer-row">
           <h2>Contact</h2>
           <Link styleName="links" to="/signup"><h4> Sign Up</h4></Link>
-          <h4> Privacy Policy</h4>
+          <h4> Contact Us</h4>
           <h4> FAQ</h4>
         </div>
         <div styleName="newsletter-container">
