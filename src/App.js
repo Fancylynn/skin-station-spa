@@ -14,19 +14,19 @@ import Layout from "./components/Layout";
 class App extends PureComponent {
   render() {
     return (
-      <Layout>
-        <Router history={browserHistory} key={0}>
+      <Router history={browserHistory} key={0}>
+        <Route component={Layout}>
           <Route exact path="/" component={Homepage}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/services" component={Services}/>
           <Route path="/location" component={Locations}/>
           <Route path="/reservation" component={Reservation}/>
           <Route path="/aboutUs" component={AboutUs}/>
-          <Route path="/policy" component={Policy}/>
           <Route path="/contact" component={Contact}/>
-          <Route path="/*" component={NotFound}/>
-        </Router>
-      </Layout>
+        </Route>
+        <Route path="/policy" component={Policy}/>
+        <Route path="/*" component={NotFound}/>
+      </Router>
     );
   }
 }
