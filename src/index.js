@@ -5,12 +5,13 @@ import {render} from "react-dom";
 import App from "./App";
 // import Homepage from "./containers/Homepage";
 
-const store = createStore(
-	window.devToolsExtension && window.devToolsExtension()
-);
+// const store = createStore(
+// 	window.devToolsExtension && window.devToolsExtension()
+// );
+// <Provider store={store}>
 
 render(
-  <Provider store={store}>
+  <Provider>
     <App/>
   </Provider>,
   document.getElementById("container")

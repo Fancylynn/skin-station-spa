@@ -6,8 +6,9 @@ import Services from "./components/Services";
 import Locations from "./components/Locations";
 import NotFound from "./components/NotFound";
 import Reservation from "./components/Reservation";
-import Contact from "./components/Contact";
+import AboutUs from "./components/AboutUs";
 import Policy from "./components/Policy";
+import Contact from "./components/Contact";
 
 class App extends PureComponent {
   render() {
@@ -18,8 +19,9 @@ class App extends PureComponent {
         <Route path="/services" component={Services}/>
         <Route path="/location" component={Locations}/>
         <Route path="/reservation" component={Reservation}/>
-        <Route path="/contact" component={Contact}/>
+        <Route path="/aboutUs" component={AboutUs}/>
         <Route path="/policy" component={Policy}/>
+        <Route path="/contact" component={Contact}/>
         <Route path="/*" component={NotFound}/>
       </Router>
     );

@@ -16,7 +16,7 @@ const NavBar = props => {
             <li><Link styleName="links" to="/services">SERVICES</Link></li>
             <li><Link styleName="links" to="/location">LOCATIONS</Link></li>
             <li><Link styleName="links" to="/reservation">RESERVATION</Link></li>
-            <li><Link styleName="links" to="/contact">ABOUT US</Link></li>
+            <li><Link styleName="links" to="/aboutUs">ABOUT US</Link></li>
             <li><Link styleName="links" to="/signup">SIGN IN</Link></li>
           </ul>
         </div>

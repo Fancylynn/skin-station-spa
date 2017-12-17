@@ -17,7 +17,7 @@ class Footer extends Component {
       <div styleName="footer-container">
         <div styleName="footer-row">
           <h2> COMPANY </h2>
-          <Link styleName="links" to="/contact"><h4>About Us</h4></Link>
+          <Link styleName="links" to="/aboutUs"><h4>About Us</h4></Link>
           <h4> Blog </h4>
           <Link styleName="links" to="/location"><h4>Location</h4></Link>
           <h4 onClick={this.openPolicyWindow}> Store Policies</h4>
@@ -58,7 +58,7 @@ class Footer extends Component {
         <div styleName="footer-row">
           <h2>Contact</h2>
           <Link styleName="links" to="/signup"><h4> Sign Up</h4></Link>
-          <h4> Contact Us</h4>
+          <Link styleName="links" to="/contact"><h4> Contact Us</h4></Link>
           <h4> FAQ</h4>
         </div>
         <div styleName="newsletter-container">
