@@ -1,7 +1,5 @@
 import React, {Component, PropTypes} from "react";
 import ReactGoogleMaps from "../components/GoogleMap";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import BackIcon from "../components/BackIcon";
 import cssModules from "react-css-modules";
 import styles from "../styles/Locations.css";
@@ -40,7 +38,6 @@ class Locations extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
         <div styleName="location-detail">
           <div styleName="locations-container">
             <h2>All Locations</h2>
@@ -115,7 +112,6 @@ class Locations extends Component {
             <ReactGoogleMaps lat={this.state.lat} lng={this.state.lng}/>
           </div>
         </div>
-        <Footer/>
         <BackIcon/>
       </div>
     );

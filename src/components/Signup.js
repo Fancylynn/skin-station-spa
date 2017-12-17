@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 
 class Signup extends Component {
   state = {
@@ -31,7 +29,6 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
         <div styleName="sign-in-container">
           <h1>Great to see you again!</h1>
           <form>
@@ -82,7 +79,6 @@ class Signup extends Component {
             </div>
           </footer>
         </div>
-        <Footer/>
       </div>
     );
   }

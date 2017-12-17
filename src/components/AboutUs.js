@@ -1,14 +1,11 @@
 import React, {Component} from "react";
 import styles from "../styles/AboutUs.css";
 import cssModules from "react-css-modules";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 
 class Contact extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
         <img styleName="contact-image" src="img/contact-img1.jpg" alt="contact-us"/>
         <div styleName="company-info">
           <h1>About Us</h1>
@@ -28,7 +25,6 @@ class Contact extends Component {
             journey in renewing your skins natural beauty, come to one of our six Skin
             Station Spa locations, where beauty is beyond skin deep.</p>
         </div>
-        <Footer/>
       </div>
     );
   }

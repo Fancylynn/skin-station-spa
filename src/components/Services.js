@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from "react";
-import NavBar from "./NavBar";
 import cssModules from "react-css-modules";
 import styles from "../styles/Services.css";
-import Footer from "../components/Footer";
 import ServiceItem from "../components/ServiceItem";
 
 
@@ -107,7 +105,6 @@ class Services extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
         <img styleName="service-img" src="img/services.jpg" alt="services-img"/>
         <div styleName="services">
           <p styleName="service-nav-title">Our Services</p>
@@ -138,7 +135,6 @@ class Services extends Component {
             {this.state.displayMode === "package" && <ServiceItem pictures={PACKAGE_DATA}/>}
           </div>
         </div>
-        <Footer/>
       </div>
     );
   }

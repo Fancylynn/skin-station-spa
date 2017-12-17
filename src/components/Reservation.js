@@ -1,9 +1,7 @@
 import React, {Component} from "react";
 import styles from "../styles/Reservation.css";
 import cssModules from "react-css-modules";
-import NavBar from "../components/NavBar";
 import ReservationItem from "../components/ReservationItem";
-import Footer from "../components/Footer";
 import Calendar from "../components/Calendar";
 
 const FACE_DATA = [
@@ -376,7 +374,6 @@ class Reservation extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
         <div styleName="reservation-title">
           <h2 styleName="title">Our Services</h2>
         </div>
@@ -475,7 +472,6 @@ class Reservation extends Component {
             <h3>{"If you don't receive your confirmation within 24 hours. Please contact us over the phone."} </h3>
           </div>
         }
-        <Footer/>
       </div>
     );
   }
