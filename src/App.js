@@ -14,7 +14,7 @@ import Layout from "./components/Layout";
 class App extends PureComponent {
   render() {
     return (
-      <Router history={browserHistory} key={0}>
+      <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory} key={0}>
         <Route component={Layout}>
           <Route exact path="/" component={Homepage}/>
           <Route path="/signup" component={Signup}/>
