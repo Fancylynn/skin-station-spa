@@ -1,7 +1,8 @@
 .contact-container {
     width: 80%;
     margin-top: 10%;
-    margin-left: 15%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-title {
@@ -56,8 +57,9 @@
 
 .contact-button {
     margin-top: 5px;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     padding: 20px 35px;
     background-color: #ED5A5A;
     text-transform: uppercase;
@@ -69,4 +71,21 @@
     transition: all 0.3s;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.contact-submit-container {
+    width: 80%;
+    height: 250px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-submit {
+    margin-bottom: 30px;
+    color: #3E4C53;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
 }
