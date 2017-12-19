@@ -10,6 +10,7 @@ import AboutUs from "./components/AboutUs";
 import Policy from "./components/Policy";
 import Contact from "./components/Contact";
 import Layout from "./components/Layout";
+import FAQ from "./components/FAQ";
 
 class App extends PureComponent {
   render() {
@@ -25,6 +26,7 @@ class App extends PureComponent {
           <Route path="/contact" component={Contact}/>
         </Route>
         <Route path="/policy" component={Policy}/>
+        <Route path="/FAQ" component={FAQ}/>
         <Route path="/*" component={NotFound}/>
       </Router>
     );
