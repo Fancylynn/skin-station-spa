@@ -14,7 +14,7 @@
     
 }
 
-.nav-bar ul {
+ul {
     list-style: none;
 }
 
@@ -27,27 +27,29 @@
 
 .nav-links {
     float: right;
-    margin-right: 30px;
 }
 
-.nav-links li {
-    display: inline-block;
-    padding: 0 10px;
+.nav-links li{
+     display: inline-block;
     color: white;
-    margin-top: 25px;
+}
+
+.link {
+    display: inline-block;
+    color: white;
 }
 
 .links {
     /*text-decoration: none;*/
-    color: white !important; 
+    color: white; 
 }
 
 .links:hover {
     color: blueviolet;
 }
 
-.nav-links li::before,
-.nav-links li::after {
+.link::before,
+.link::after {
 	display: inline-block;
 	opacity: 0;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
@@ -55,7 +57,7 @@
 	transition: transform 0.3s, opacity 0.2s;
 }
 
-.nav-links li::before {
+.link::before {
 	margin-right: 5px;
 	content: '[';
 	-webkit-transform: translateX(20px);
@@ -63,7 +65,7 @@
 	transform: translateX(20px);
 }
 
-.nav-links li::after {
+.link::after {
 	margin-left: 5px;
 	content: ']';
 	-webkit-transform: translateX(-20px);
@@ -71,10 +73,10 @@
 	transform: translateX(-20px);
 }
 
-.nav-links li:hover::before,
-.nav-links li:hover::after,
-.nav-links li:focus::before,
-.nav-links li:focus::after {
+.link:hover::before,
+.link:hover::after,
+.link:focus::before,
+.link:focus::after {
 	opacity: 1;
 	-webkit-transform: translateX(0px);
 	-moz-transform: translateX(0px);

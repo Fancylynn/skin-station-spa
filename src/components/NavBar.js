@@ -56,24 +56,28 @@ class NavBar extends Component {
           <NavbarToggler onClick={this.toggle}/>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink><Link styleName="links" to="/">Home</Link></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Link styleName="links" to="/services">Services</Link></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Link styleName="links" to="/location">Locations</Link></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Link styleName="links" to="/reservation">Reservation</Link></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Link styleName="links" to="/aboutUs">About Us</Link></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink><Link styleName="links" to="/signup">Sign In</Link></NavLink>
-              </NavItem>
+              <div styleName="nav-links">
+                <ul>
+                  <NavItem>
+                    <NavLink><li styleName="link"><Link styleName="links" to="/">Home</Link></li></NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink><li styleName="link"><Link styleName="links" to="/services">Services</Link></li></NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink><li styleName="link"><Link styleName="links" to="/location">Locations</Link></li></NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink><li styleName="link"><Link styleName="links" to="/reservation">Reservation</Link></li></NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink><li styleName="link"><Link styleName="links" to="/aboutUs">About Us</Link></li></NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink><li styleName="link"><Link styleName="links" to="/signup">Sign In</Link></li></NavLink>
+                  </NavItem>
+                </ul>
+              </div>
             </Nav>
           </Collapse>
         </Navbar>
