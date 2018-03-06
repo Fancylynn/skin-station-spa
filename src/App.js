@@ -1,12 +1,12 @@
 import React, {PureComponent} from "react";
 import {Router, Route, browserHistory} from "react-router";
 import Homepage from "./containers/Homepage";
-import Signup from "./components/Signup";
-import Services from "./components/Services";
-import Locations from "./components/Locations";
+import Signup from "./containers/Signup";
+import Services from "./containers/Services";
+import Locations from "./containers/Locations";
 import NotFound from "./components/NotFound";
-import Reservation from "./components/Reservation";
-import AboutUs from "./components/AboutUs";
+import Reservation from "./containers/Reservation";
+import AboutUs from "./containers/AboutUs";
 import Policy from "./components/Policy";
 import Contact from "./components/Contact";
 import Layout from "./components/Layout";

@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from "react";
+import React, {Component} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
 
