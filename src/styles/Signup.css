@@ -1,18 +1,26 @@
-.sign-in-container {
-    margin-left: auto;
+.sign-tab-container {
+    margin-left: 30%;
     margin-right: auto;
-    margin-top: 8%;
+}
+
+.sign-tab {
+    margin-top: 15%;
+    width: 55%;
+}
+
+.sign-in-container {
+    margin-top: 2%;
     margin-bottom: 5%;
-    width: 50%;
 }
 
 .sign-in-container h1 {
+    margin-top: 3%;
     line-height: 48px;
     font-size: 36px;
     font-weight: 300;
     color: #574751;
     font-family: Roboto, Helvetica, sans-serif;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 form {
@@ -23,9 +31,7 @@ form {
 .input-wrapper {
     width: 55%;
     height: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+    /*margin-top: 3%;*/
 }
 
 .input-area {
@@ -40,7 +46,7 @@ form {
     color: #574751;
     width: 100%;
     border: none;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 
 .input-text-label{
@@ -62,8 +68,6 @@ form {
 
 .login-button {
     width: 55%;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 10px;
     height: 60px;
     background-color: #fdbd39;
@@ -75,8 +79,6 @@ form {
 
 .footer {
     width: 55%;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 10px;
 }
 
@@ -113,3 +115,4 @@ form {
 .input-password-empty {
     opacity: 0;
 }
+
