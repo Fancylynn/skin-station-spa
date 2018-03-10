@@ -1,24 +1,38 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
 import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
 import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col} from "reactstrap";
 import classnames from "classnames";
+import * as actions from "../actions/loginAction";
+import {bindActionCreators} from "redux";
+
+
+// const mapDispathToProps = (dispatch) => {
+//   return ({
+//     updateEmail: bindActionCreators(updateEmail, dispatch),
+//     updatePassword: bindActionCreators(updatePassword, dispatch),
+//     doLogin: bindActionCreators(doLogin, dispatch)
+//   });
+// };
 
 
 class Signup extends Component {
   state = {
-    inputUserName: false,
+    inputEmail: false,
     inputPassword: false,
     activeTab: "signIn"
   };
 
-  onUserNameChange = (e) => {
-    const userName = e.target.value;
-    if (userName !== "") {
-      this.setState({inputUserName: true});
+  onEmailChange = (e) => {
+    const email = e.target.value;
+    console.log(email);
+    if (email !== "") {
+      this.setState({inputEmail: true});
     } else {
-      this.setState({inputUserName: false});
+      this.setState({inputEmail: false});
     }
+    this.props.updateEmail(email);
   }
 
   onPasswordChange = (e) => {
@@ -28,12 +42,19 @@ class Signup extends Component {
     } else {
       this.setState({inputPassword: false});
     }
+    this.props.updatePassword(password);
   }
 
   onTabChange = (tab) => {
     if (this.state.activeTab !== tab) {
       this.setState({activeTab: tab});
     }
+  }
+
+  login = (e) => {
+    e.preventDefault();
+    const {email, password} = this.props;
+    this.props.doLogin(email, password);
   }
 
   render() {
@@ -67,21 +88,21 @@ class Signup extends Component {
               <Col sm="12">
                 <div styleName="sign-in-container">
                   <h1>Great to see you again!</h1>
-                  <form>
-                    <div styleName="input-wrapper" title="Username / email">
+                  <form onSubmit={this.login}>
+                    <div styleName="input-wrapper" title="Email">
                       <div styleName="input-area">
-                        <label styleName={this.state.inputUserName ?
+                        <label styleName={this.state.inputEmail ?
                                           "input-name-not-empty"
                                           :
                                           "input-name-empty"}
                         >
-                            Username / email
+                            Email
                         </label>
                         <input styleName="input-text-box"
                             type="text"
-                            placeholder="Username / email"
+                            placeholder="Email"
                             maxLength="256"
-                            onChange={this.onUserNameChange}
+                            onChange={this.onEmailChange}
                             required
                         />
                         <div styleName="input-underline"/>
@@ -121,7 +142,7 @@ class Signup extends Component {
           <TabPane tabId="signUp">
             <Row>
               <Col sm="12">
-                <h4>Tab 1 Contents</h4>
+                <h4>{this.props.username}</h4>
               </Col>
             </Row>
           </TabPane>
@@ -131,4 +152,13 @@ class Signup extends Component {
   }
 }
 
-export default cssModules(Signup, styles);
+const mapStateToProps = (state) => {
+  return ({
+    username: state.loginReducer.username,
+    email: state.loginReducer.email,
+    password: state.loginReducer.password
+  });
+};
+
+// connect(mapStateToProps, actions)(Signup);
+export default connect(mapStateToProps, actions)(cssModules(Signup, styles));

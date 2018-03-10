@@ -1,20 +1,32 @@
 import React from "react";
 import {Provider} from "react-redux";
-import {createStore} from "redux";
+import {createStore, applyMiddleware, compose} from "redux";
+import logger from "redux-logger";
+import createSagaMiddleware from "redux-saga";
 import {render} from "react-dom";
 import App from "./App";
-import 'bootstrap/dist/css/bootstrap.css';
-// import Homepage from "./containers/Homepage";
+import reducer from "./reducers";
+import saga from "./sagas";
+import "bootstrap/dist/css/bootstrap.css";
 
+const sagaMiddleware = createSagaMiddleware();
+const middleware = applyMiddleware(sagaMiddleware, logger());
+const store = createStore(
+  reducer,
+  compose(
+    middleware,
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
+);
 
-// const store = createStore(
-// 	window.devToolsExtension && window.devToolsExtension()
-// );
+sagaMiddleware.run(saga);
 // <Provider store={store}>
 
 render(
-  <Provider>
+  <Provider store={store}>
     <App/>
   </Provider>,
   document.getElementById("container")
 );
+
+// window.devToolsExtension && window.devToolsExtension()
