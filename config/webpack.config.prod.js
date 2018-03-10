@@ -131,11 +131,13 @@ module.exports = {
         // Webpack 1.x uses Uglify plugin as a signal to minify *all* the assets
         // including CSS. This is confusing and will be removed in Webpack 2:
         // https://github.com/webpack/webpack/issues/283
-        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer&modules!postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer&modules!postcss'),
+        exclude: /node_modules/
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
+      { test: /\.css$/, loader: 'style-loader!css-loader', include: /node_modules/ },
       {
         test: /\.json$/,
         loader: 'json'
