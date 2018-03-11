@@ -15,7 +15,10 @@ function* checkLogin(action) {
   if(action !== undefined) {
     try {
       const response = yield call(sendRequest, action.email, action.password);
-      yield put.response(loginSuccessful(response.username));
+      console.log(response);
+      const {data} = response;
+      console.log(data);
+      yield put.resolve(loginSuccessful(data.username));
     } catch (e) {
       console.error("Fail to login");
     }
