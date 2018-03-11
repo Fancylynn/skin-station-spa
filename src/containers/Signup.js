@@ -2,10 +2,12 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
-import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col} from "reactstrap";
 import classnames from "classnames";
 import * as actions from "../actions/loginAction";
 import {bindActionCreators} from "redux";
+import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col} from "reactstrap";
+import LoginForm from "../components/LoginForm";
+import SignupForm from "../components/SignupForm";
 
 
 // const mapDispathToProps = (dispatch) => {
@@ -26,7 +28,6 @@ class Signup extends Component {
 
   onEmailChange = (e) => {
     const email = e.target.value;
-    console.log(email);
     if (email !== "") {
       this.setState({inputEmail: true});
     } else {
@@ -86,55 +87,15 @@ class Signup extends Component {
           <TabPane tabId="signIn">
             <Row>
               <Col sm="12">
-                <div styleName="sign-in-container">
-                  <h1>Great to see you again!</h1>
-                  <form onSubmit={this.login}>
-                    <div styleName="input-wrapper" title="Email">
-                      <div styleName="input-area">
-                        <label styleName={this.state.inputEmail ?
-                                          "input-name-not-empty"
-                                          :
-                                          "input-name-empty"}
-                        >
-                            Email
-                        </label>
-                        <input styleName="input-text-box"
-                            type="text"
-                            placeholder="Email"
-                            maxLength="256"
-                            onChange={this.onEmailChange}
-                            required
-                        />
-                        <div styleName="input-underline"/>
-                      </div>
-                    </div>
-                    <div styleName="input-wrapper" title="Password">
-                      <div styleName="input-area">
-                        <label styleName={this.state.inputPassword ?
-                                          "input-password-not-empty"
-                                          :
-                                          "input-password-empty"}
-                        >
-                            Password
-                        </label>
-                        <input styleName="input-text-box"
-                            type="text"
-                            placeholder="Password"
-                            maxLength="256"
-                            onChange={this.onPasswordChange}
-                            required
-                        />
-                        <div styleName="input-underline"/>
-                      </div>
-                    </div>
-                    <button styleName="login-button">Login</button>
-                  </form>
-                  <footer styleName="footer">
-                    <div>
-                      <span styleName="forget-password">Forget Password?</span>
-                      <span styleName="no-account">{"Don't have an account? "}<a>Get started</a></span>
-                    </div>
-                  </footer>
+                <div>
+                  <LoginForm
+                      onEmailChange={this.onEmailChange}
+                      onPasswordChange={this.onPasswordChange}
+                      login={this.login}
+                      inputEmail={this.state.inputEmail}
+                      inputPassword={this.state.inputPassword}
+                      loginStatus={this.props.loginStatus}
+                  />
                 </div>
               </Col>
             </Row>
@@ -142,7 +103,7 @@ class Signup extends Component {
           <TabPane tabId="signUp">
             <Row>
               <Col sm="12">
-                <h4>{this.props.username}</h4>
+                <SignupForm/>
               </Col>
             </Row>
           </TabPane>
@@ -156,7 +117,8 @@ const mapStateToProps = (state) => {
   return ({
     username: state.loginReducer.username,
     email: state.loginReducer.email,
-    password: state.loginReducer.password
+    password: state.loginReducer.password,
+    loginStatus: state.loginReducer.loginStatus
   });
 };
 

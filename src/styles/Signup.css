@@ -6,6 +6,8 @@
 .sign-tab {
     margin-top: 15%;
     width: 55%;
+    cursor: pointer;
+    
 }
 
 .sign-in-container {
@@ -31,7 +33,7 @@ form {
 .input-wrapper {
     width: 55%;
     height: 70px;
-    /*margin-top: 3%;*/
+    margin-top: 3%;
 }
 
 .input-area {
@@ -116,3 +118,13 @@ form {
     opacity: 0;
 }
 
+.error-message span {
+    font-family: Nanum, Helvetica, sans-serif;
+    line-height: 19px;
+    font-size: 16px;
+    color: red;
+}
+
+.no-error-message {
+    opacity: 0;
+}

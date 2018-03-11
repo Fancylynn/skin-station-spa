@@ -10,10 +10,10 @@ export const doLogin = (email, password) => {
   return {type: "LOGIN_SUBMITTED", email, password};
 };
 
-export const loginSuccessful = (username) => {
-  return {type: "LOGIN_SUCCESSFUL", username};
+export const loginSuccessful = (username, success) => {
+  return {type: "LOGIN_SUCCESSFUL", username, success};
 };
 
-export const loginFailed = () => {
-  return {type: "LOGIN_FAILED"};
+export const loginFailed = (fail) => {
+  return {type: "LOGIN_FAILED", fail};
 };

@@ -1,6 +1,6 @@
 import {call, put, takeEvery, takeLatest} from "redux-saga/effects";
 import axios from "axios";
-import {loginSuccessful} from "../actions/loginAction";
+import {loginSuccessful, loginFailed} from "../actions/loginAction";
 
 
 function sendRequest(email, password) {
@@ -11,15 +11,14 @@ function sendRequest(email, password) {
 }
 
 function* checkLogin(action) {
-  console.log(action);
   if(action !== undefined) {
     try {
       const response = yield call(sendRequest, action.email, action.password);
-      console.log(response);
       const {data} = response;
-      console.log(data);
-      yield put.resolve(loginSuccessful(data.username));
+      yield put.resolve(loginSuccessful(data.username, "success"));
     } catch (e) {
+      yield put.resolve(loginFailed("fail"));
+      console.log(e);
       console.error("Fail to login");
     }
   }
