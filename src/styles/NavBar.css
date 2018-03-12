@@ -20,20 +20,22 @@ ul {
 
 .logo {
     margin-left: 10px;
-    width: 40%;
-    height: 60%;
+    width: 150px;
     float: left;
+}
+
+.nav-links-right {
+    margin-right: 10%;
 }
 
 .nav-links {
     color: white !important;
-    margin-right: 10px;
     font-size: 15px;
     font-weight: 600;
     display: flex;
     width: 120%;
+    white-space: nowrap;
 }
-
 
 .nav-links:hover {
     color: blueviolet !important;

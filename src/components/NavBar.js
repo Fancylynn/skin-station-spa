@@ -64,7 +64,7 @@ class NavBar extends Component {
           <NavbarBrand href="/">
             <img styleName="logo" src="img/logo-inside.png" alt="logo icon"/>
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} color="primary"/>
+          <NavbarToggler onClick={this.toggle}/>
           <Collapse isOpen={this.state.isOpen} navbar >
             <Nav className="ml-auto" navbar>
               <NavItem>
