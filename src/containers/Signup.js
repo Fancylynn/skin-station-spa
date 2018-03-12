@@ -97,6 +97,7 @@ class Signup extends Component {
                     /> :
                     <div>
                       <div styleName="login-successful-message">
+                        <img src="img/correct.png" alt="login successfully"/>
                         <span>Congratulations! You have successfully logged in. The page will be redirected within 5 seconds.</span>
                       </div>
                     </div>

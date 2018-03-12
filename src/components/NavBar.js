@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/NavBar.css";
 import {Link} from "react-router";
+import {connect} from "react-redux";
 import {
   Collapse,
   Navbar,
@@ -10,10 +11,11 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Dropdown,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem} from "reactstrap";
 
 class NavBar extends Component {
   /* return(
@@ -37,25 +39,34 @@ class NavBar extends Component {
     </div>
   );*/
 
-    state = {
-      isOpen: false
-    };
+  state = {
+    isOpen: false,
+    dropdownOpen: false
+  };
 
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
+  dropdownToggle = () => {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+
   render() {
     return (
       <div styleName="nav-bar-fixed">
-        <Navbar color="faded" light expand="md">
+        <Navbar color="faded" expand="md">
           <NavbarBrand href="/">
             <img styleName="logo" src="img/logo-inside.png" alt="logo icon"/>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle}/>
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto" navbar color="white">
               <div styleName="nav-links">
                 <ul>
                   <NavItem>
@@ -73,8 +84,21 @@ class NavBar extends Component {
                   <NavItem>
                     <NavLink><li styleName="link"><Link styleName="links" to="/aboutUs">About Us</Link></li></NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink><li styleName="link"><Link styleName="links" to="/signup">Sign In</Link></li></NavLink>
+                  <NavItem color="white">
+                    {this.props.loginStatus !== "success" ?
+                      <NavLink><li styleName="link"><Link styleName="links" to="/signup">Sign In</Link></li></NavLink>
+                      :
+                      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
+                        <DropdownToggle nav caret color="white">
+                          Hi, {this.props.username}
+                        </DropdownToggle>
+                        <DropdownMenu>
+                          <DropdownItem>User Profile</DropdownItem>
+                          <DropdownItem>Reservation History</DropdownItem>
+                          <DropdownItem>Log Out</DropdownItem>
+                        </DropdownMenu>
+                      </Dropdown>
+                    }
                   </NavItem>
                 </ul>
               </div>
@@ -86,8 +110,11 @@ class NavBar extends Component {
   }
 }
 
-// NavBar.propTypes = {
-//     changeDisplayMode: PropTypes.func.isRequired,
-// };
+const mapStateToProps = (state) => {
+  return ({
+    username: state.loginReducer.username,
+    loginStatus: state.loginReducer.loginStatus
+  });
+};
 
-export default cssModules(NavBar, styles);
+export default connect(mapStateToProps)(cssModules(NavBar, styles));

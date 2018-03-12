@@ -82,3 +82,7 @@ ul {
 	-moz-transform: translateX(0px);
 	transform: translateX(0px);
 }
+
+.dropdown-list {
+    color: white;
+}
