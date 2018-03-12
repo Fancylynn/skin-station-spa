@@ -60,48 +60,44 @@ class NavBar extends Component {
   render() {
     return (
       <div styleName="nav-bar-fixed">
-        <Navbar color="faded" expand="md">
+        <Navbar dark expand="md">
           <NavbarBrand href="/">
             <img styleName="logo" src="img/logo-inside.png" alt="logo icon"/>
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle}/>
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar color="white">
-              <div styleName="nav-links">
-                <ul>
-                  <NavItem>
-                    <NavLink><li styleName="link"><Link styleName="links" to="/">Home</Link></li></NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink><li styleName="link"><Link styleName="links" to="/services">Services</Link></li></NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink><li styleName="link"><Link styleName="links" to="/location">Locations</Link></li></NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink><li styleName="link"><Link styleName="links" to="/reservation">Reservation</Link></li></NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink><li styleName="link"><Link styleName="links" to="/aboutUs">About Us</Link></li></NavLink>
-                  </NavItem>
-                  <NavItem color="white">
-                    {this.props.loginStatus !== "success" ?
-                      <NavLink><li styleName="link"><Link styleName="links" to="/signup">Sign In</Link></li></NavLink>
+          <NavbarToggler onClick={this.toggle} color="primary"/>
+          <Collapse isOpen={this.state.isOpen} navbar >
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/" styleName="nav-links">Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/services" styleName="nav-links">Services</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/location" styleName="nav-links">Locations</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/reservation" styleName="nav-links">Reservation</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/aboutUs" styleName="nav-links">About Us</NavLink>
+              </NavItem>
+              <NavItem>
+                {this.props.loginStatus !== "success" ?
+                  <NavLink href="/signup" styleName="nav-links">Sign In</NavLink>
                       :
-                      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
-                        <DropdownToggle nav caret color="white">
+                  <Dropdown isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
+                    <DropdownToggle nav caret color="white">
                           Hi, {this.props.username}
-                        </DropdownToggle>
-                        <DropdownMenu>
-                          <DropdownItem>User Profile</DropdownItem>
-                          <DropdownItem>Reservation History</DropdownItem>
-                          <DropdownItem>Log Out</DropdownItem>
-                        </DropdownMenu>
-                      </Dropdown>
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem>User Profile</DropdownItem>
+                      <DropdownItem>Reservation History</DropdownItem>
+                      <DropdownItem>Log Out</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
                     }
-                  </NavItem>
-                </ul>
-              </div>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

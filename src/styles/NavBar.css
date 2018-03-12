@@ -26,30 +26,22 @@ ul {
 }
 
 .nav-links {
-    float: right;
+    color: white !important;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    width: 120%;
 }
 
-.nav-links li{
-    display: inline-block;
-    color: white;
+
+.nav-links:hover {
+    color: blueviolet !important;
+    font-weight: 700;
 }
 
-.link {
-    display: inline-block;
-    color: white;
-}
-
-.links {
-    /*text-decoration: none;*/
-    color: white; 
-}
-
-.links:hover {
-    color: blueviolet;
-}
-
-.link::before,
-.link::after {
+.nav-links::before,
+.nav-links::after {
 	display: inline-block;
 	opacity: 0;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
@@ -57,7 +49,7 @@ ul {
 	transition: transform 0.3s, opacity 0.2s;
 }
 
-.link::before {
+.nav-links::before {
 	margin-right: 5px;
 	content: '[';
 	-webkit-transform: translateX(20px);
@@ -65,18 +57,18 @@ ul {
 	transform: translateX(20px);
 }
 
-.link::after {
+.nav-links::after {
 	margin-left: 5px;
 	content: ']';
-	-webkit-transform: translateX(-20px);
-	-moz-transform: translateX(-20px);
-	transform: translateX(-20px);
+	-webkit-transform: translateX(-10px);
+	-moz-transform: translateX(-10px);
+	transform: translateX(-10px);
 }
 
-.link:hover::before,
-.link:hover::after,
-.link:focus::before,
-.link:focus::after {
+.nav-links:hover::before,
+.nav-links:hover::after,
+.nav-links:focus::before,
+.nav-links:focus::after {
 	opacity: 1;
 	-webkit-transform: translateX(0px);
 	-moz-transform: translateX(0px);
@@ -85,4 +77,8 @@ ul {
 
 .dropdown-list {
     color: white;
+}
+
+.toggle-hamburger {
+    color: black;
 }
