@@ -118,13 +118,37 @@ form {
     opacity: 0;
 }
 
+.error-message {
+    border: 0.8px solid #D8000C;
+    background-color: #FFBABA;
+    margin: 10px 0px;
+    padding: 8px; 
+    width: 55%;
+}
+
 .error-message span {
-    font-family: Nanum, Helvetica, sans-serif;
+    font-family: cursive, Helvetica, sans-serif;
     line-height: 19px;
     font-size: 16px;
-    color: red;
+    color: #D8000C;
+
 }
 
 .no-error-message {
     opacity: 0;
+}
+
+.login-successful-message {
+    border: 1px solid #4F8A10;
+    background-color: #DFF2BF;
+    margin: 10px 0px;
+    padding: 8px; 
+    width: 55%;
+}
+
+.login-successful-message span {
+    font-family: cursive, Helvetica, sans-serif;
+    color: #4F8A10;
+    line-height: 19px;
+    font-size: 16px;  
 }

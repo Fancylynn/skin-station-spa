@@ -1,6 +1,7 @@
 import {call, put, takeEvery, takeLatest} from "redux-saga/effects";
 import axios from "axios";
 import {loginSuccessful, loginFailed} from "../actions/loginAction";
+import {browserHistory} from "react-router";
 
 
 function sendRequest(email, password) {
@@ -10,12 +11,22 @@ function sendRequest(email, password) {
     );
 }
 
+function delay() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+    }, 5000);
+  });
+}
+
 function* checkLogin(action) {
   if(action !== undefined) {
     try {
       const response = yield call(sendRequest, action.email, action.password);
       const {data} = response;
       yield put.resolve(loginSuccessful(data.username, "success"));
+      yield call(delay);
+      browserHistory.push("/");
     } catch (e) {
       yield put.resolve(loginFailed("fail"));
       console.log(e);

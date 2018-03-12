@@ -9,7 +9,8 @@ class LoginForm extends Component {
       <div styleName="sign-in-container">
         <h1>Great to see you again!</h1>
         <div styleName={this.props.loginStatus === "fail" ? "error-message" : "no-error-message"}>
-          <span>Your username or password is not correct.</span>
+          <img src="img/error.png" alt="error message"/>
+          <span>Ooops! Your username or password is not correct!</span>
         </div>
         <form onSubmit={this.props.login}>
           <div styleName="input-wrapper" title="Email">

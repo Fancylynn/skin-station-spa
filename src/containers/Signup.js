@@ -4,11 +4,9 @@ import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
 import classnames from "classnames";
 import * as actions from "../actions/loginAction";
-import {bindActionCreators} from "redux";
 import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col} from "reactstrap";
 import LoginForm from "../components/LoginForm";
 import SignupForm from "../components/SignupForm";
-
 
 // const mapDispathToProps = (dispatch) => {
 //   return ({
@@ -88,14 +86,21 @@ class Signup extends Component {
             <Row>
               <Col sm="12">
                 <div>
-                  <LoginForm
-                      onEmailChange={this.onEmailChange}
-                      onPasswordChange={this.onPasswordChange}
-                      login={this.login}
-                      inputEmail={this.state.inputEmail}
-                      inputPassword={this.state.inputPassword}
-                      loginStatus={this.props.loginStatus}
-                  />
+                  {this.props.loginStatus !== "success" ?
+                    <LoginForm
+                        onEmailChange={this.onEmailChange}
+                        onPasswordChange={this.onPasswordChange}
+                        login={this.login}
+                        inputEmail={this.state.inputEmail}
+                        inputPassword={this.state.inputPassword}
+                        loginStatus={this.props.loginStatus}
+                    /> :
+                    <div>
+                      <div styleName="login-successful-message">
+                        <span>Congratulations! You have successfully logged in. The page will be redirected within 5 seconds.</span>
+                      </div>
+                    </div>
+                  }
                 </div>
               </Col>
             </Row>
