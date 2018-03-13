@@ -17,3 +17,7 @@ export const loginSuccessful = (username, success) => {
 export const loginFailed = (fail) => {
   return {type: "LOGIN_FAILED", fail};
 };
+
+export const resetLoginStatus = () => {
+  return {type: "RESET_LOGIN_STATUS"};
+};

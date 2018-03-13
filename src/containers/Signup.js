@@ -4,7 +4,7 @@ import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
 import classnames from "classnames";
 import * as actions from "../actions/loginAction";
-import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col} from "reactstrap";
+import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Alert} from "reactstrap";
 import LoginForm from "../components/LoginForm";
 import SignupForm from "../components/SignupForm";
 
@@ -94,12 +94,15 @@ class Signup extends Component {
                         inputEmail={this.state.inputEmail}
                         inputPassword={this.state.inputPassword}
                         loginStatus={this.props.loginStatus}
+                        resetLoginStatus={this.props.resetLoginStatus}
                     /> :
                     <div>
-                      <div styleName="login-successful-message">
-                        <img src="img/correct.png" alt="login successfully"/>
-                        <span>Congratulations! You have successfully logged in. The page will be redirected within 5 seconds.</span>
-                      </div>
+                      <Alert color="success" styleName="login-successful-message">
+                        <h4 className="alert-heading">Congratulations!</h4>
+                        <p>You have successfully logged in. The page will be redirected within 5 seconds.</p>
+                        <hr/>
+                        <p>If the page fails to reload in 5 seconds. Please click here.</p>
+                      </Alert>
                     </div>
                   }
                 </div>

@@ -1,17 +1,18 @@
 import React, {Component} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
+import {Alert} from "reactstrap";
 
 
 class LoginForm extends Component {
+
   render() {
     return (
       <div styleName="sign-in-container">
         <h1>Great to see you again!</h1>
-        <div styleName={this.props.loginStatus === "fail" ? "error-message" : "no-error-message"}>
-          <img src="img/error.png" alt="error message"/>
-          <span>Ooops! Your username or password is not correct!</span>
-        </div>
+        <Alert color="danger" isOpen={this.props.loginStatus === "fail"} toggle={this.props.resetLoginStatus} styleName="error-message">
+          Ooops! Your username or password is not correct!
+        </Alert>
         <form onSubmit={this.props.login}>
           <div styleName="input-wrapper" title="Email">
             <div styleName="input-area">

@@ -19,6 +19,9 @@ export default function reducer(state = initialState, action) {
     case "LOGIN_FAILED":
       return {...state, loginStatus: action.fail};
 
+    case "RESET_LOGIN_STATUS":
+      return {...state, loginStatus: ""};
+
     default:
       return state;
   }

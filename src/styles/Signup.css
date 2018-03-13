@@ -126,17 +126,17 @@ form {
     width: 55%;
 }
 
-.error-message span {
+/*.error-message span {
     font-family: cursive, Helvetica, sans-serif;
     line-height: 19px;
     font-size: 16px;
     color: #D8000C;
 
-}
+}*/
 
-.no-error-message {
+/*.no-error-message {
     opacity: 0;
-}
+}*/
 
 .login-successful-message {
     border: 1px solid #4F8A10;
@@ -146,9 +146,9 @@ form {
     width: 55%;
 }
 
-.login-successful-message span {
+/*.login-successful-message span {
     font-family: cursive, Helvetica, sans-serif;
     color: #4F8A10;
     line-height: 19px;
     font-size: 16px;  
-}
+}*/
