@@ -7,16 +7,7 @@ class SignupForm extends Component {
   render() {
     return (
       <Form styleName="signup-form-container">
-        <div styleName="signup-inline-container">
-          <FormGroup styleName="signup-sm-input">
-            <Label for="firstname">First Name</Label>
-            <Input type="text" name="firstname" id="firstname" placeholder="First Name"/>
-          </FormGroup>
-          <FormGroup styleName="signup-sm-input">
-            <Label for="lastname">Last Name</Label>
-            <Input type="text" name="lastname" id="lastname" placeholder="Last Name"/>
-          </FormGroup>
-        </div>
+        <h3>Welcome to Skin Station Spa.</h3>
         <FormGroup>
           <Label for="username">Username</Label>
           <Input type="text" name="username" id="username" placeholder="Username"/>
@@ -26,10 +17,6 @@ class SignupForm extends Component {
           <Input type="email" name="email" id="email" placeholder="Email Address"/>
         </FormGroup>
         <FormGroup>
-          <Label for="phone">Phone Number</Label>
-          <Input type="number" name="phone" id="phone" placeholder="Phone Number"/>
-        </FormGroup>
-        <FormGroup>
           <Label for="password">Password</Label>
           <Input type="password" name="password" id="password" placeholder="Password with at least 6 digits or characters"/>
         </FormGroup>
@@ -37,6 +24,14 @@ class SignupForm extends Component {
           <Label for="confirmPassword">Confirm Password</Label>
           <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password"/>
         </FormGroup>
+        <Button color="success">Sign Up</Button>
+        <footer>
+          <div styleName="footer-signup-login">
+            <span>Already have an account?
+              <a href="/signup">  Login here</a>
+            </span>
+          </div>
+        </footer>
       </Form>
     );
   }

@@ -52,12 +52,17 @@ class LoginForm extends Component {
               <div styleName="input-underline"/>
             </div>
           </div>
-          <button styleName="login-button">Login</button>
+          <div styleName="login-button-container">
+            <button styleName="login-button">Login</button>
+            <input type="reset" value="Reset" styleName="reset-button"/>
+          </div>
         </form>
         <footer styleName="footer">
           <div>
             <span styleName="forget-password">Forget Password?</span>
-            <span styleName="no-account">{"Don't have an account? "}<a>Get started</a></span>
+            <span styleName="no-account">{"Don't have an account? "}
+              <span styleName="no-account-get-started" onClick={this.props.changeLoginToSignup}>Get started</span>
+            </span>
           </div>
         </footer>
       </div>

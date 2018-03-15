@@ -56,12 +56,17 @@ class Signup extends Component {
     this.props.doLogin(email, password);
   }
 
+  changeLoginToSignup = () => {
+    this.setState({activeTab: "signUp"});
+  }
+
   render() {
     return (
       <div styleName="sign-tab-container">
         <Nav tabs styleName="sign-tab">
           <NavItem>
             <NavLink
+                styleName="nav-tab"
                 className={classnames({active: this.state.activeTab === "signIn"})}
                 onClick={() => {
                   this.onTabChange("signIn");
@@ -72,6 +77,7 @@ class Signup extends Component {
           </NavItem>
           <NavItem>
             <NavLink
+                styleName="nav-tab"
                 className={classnames({active: this.state.activeTab === "signUp"})}
                 onClick={() => {
                   this.onTabChange("signUp");
@@ -84,7 +90,7 @@ class Signup extends Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="signIn">
             <Row>
-              <Col sm="12">
+              <Col>
                 <div>
                   {this.props.loginStatus !== "success" ?
                     <LoginForm
@@ -95,6 +101,7 @@ class Signup extends Component {
                         inputPassword={this.state.inputPassword}
                         loginStatus={this.props.loginStatus}
                         resetLoginStatus={this.props.resetLoginStatus}
+                        changeLoginToSignup={this.changeLoginToSignup}
                     /> :
                     <div>
                       <Alert color="success" styleName="login-successful-message">
@@ -111,7 +118,7 @@ class Signup extends Component {
           </TabPane>
           <TabPane tabId="signUp">
             <Row>
-              <Col sm="12">
+              <Col>
                 <SignupForm/>
               </Col>
             </Row>
