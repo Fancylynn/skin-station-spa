@@ -7,7 +7,8 @@ class SignupForm extends Component {
   render() {
     return (
       <Form styleName="signup-form-container">
-        <h3>Welcome to Skin Station Spa.</h3>
+        <h3>Welcome to </h3>
+        <h3>Skin Station Spa ^_^</h3>
         <FormGroup>
           <Label for="username">Username</Label>
           <Input type="text" name="username" id="username" placeholder="Username"/>

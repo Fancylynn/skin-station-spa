@@ -9,7 +9,7 @@ class LoginForm extends Component {
   render() {
     return (
       <div styleName="sign-in-container">
-        <h1>Great to see you again!</h1>
+        <h3>Great to see you again!</h3>
         <Alert color="danger" isOpen={this.props.loginStatus === "fail"} toggle={this.props.resetLoginStatus} styleName="error-message">
           Ooops! Your username or password is not correct!
         </Alert>
