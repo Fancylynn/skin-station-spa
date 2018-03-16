@@ -1,14 +1,19 @@
 import {call, put, takeEvery, takeLatest} from "redux-saga/effects";
 import axios from "axios";
-import {loginSuccessful, loginFailed} from "../actions/loginAction";
+import {loginSuccessful, loginFailed, createNewUserSuccessful, createNewUserFail} from "../actions/loginAction";
 import {browserHistory} from "react-router";
 
 
-function sendRequest(email, password) {
+function sendLoginRequest(email, password) {
   return axios.get("http://api.fancylynn.com/skinstationspa/api/users/login",
     {
       params: {email: email, password: password}}
     );
+}
+
+function sendCreateNewUserRequest(username, email, password) {
+  return axios.post("http://api.fancylynn.com/skinstationspa/api/users/signup",
+    {username: username, email: email, password: password});
 }
 
 function delay() {
@@ -22,7 +27,7 @@ function delay() {
 function* checkLogin(action) {
   if(action !== undefined) {
     try {
-      const response = yield call(sendRequest, action.email, action.password);
+      const response = yield call(sendLoginRequest, action.email, action.password);
       const {data} = response;
       yield put.resolve(loginSuccessful(data.username, "success"));
       yield call(delay);
@@ -35,8 +40,25 @@ function* checkLogin(action) {
   }
 }
 
+function* checkCreateNewUser(action) {
+  if(action !== undefined) {
+    try {
+      yield call(sendCreateNewUserRequest, action.username, action.email, action.password);
+      yield put.resolve(createNewUserSuccessful("success"));
+      yield call(delay);
+      const response = yield call(sendLoginRequest, action.email, action.password);
+      const {data} = response;
+      yield put.resolve(loginSuccessful(data.username, "success"));
+      browserHistory.push("/");
+    } catch (e) {
+      console.error("Fail to create new user");
+    }
+  }
+}
+
 function* loginAPI() {
   yield takeEvery("LOGIN_SUBMITTED", checkLogin);
+  yield takeEvery("CREATE_NEW_USER", checkCreateNewUser);
 }
 
 export default loginAPI;

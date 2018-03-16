@@ -11,21 +11,45 @@ class SignupForm extends Component {
         <h3>Skin Station Spa ^_^</h3>
         <FormGroup>
           <Label for="username">Username</Label>
-          <Input type="text" name="username" id="username" placeholder="Username"/>
+          <Input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              onChange={this.props.onUsernameChange}
+          />
         </FormGroup>
         <FormGroup>
           <Label for="email">Email</Label>
-          <Input type="email" name="email" id="email" placeholder="Email Address"/>
+          <Input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+              onChange={this.props.onEmailChange}
+          />
         </FormGroup>
         <FormGroup>
           <Label for="password">Password</Label>
-          <Input type="password" name="password" id="password" placeholder="Password with at least 6 digits or characters"/>
+          <Input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password with at least 6 digits or characters"
+              onChange={this.props.onPasswordChange}
+          />
         </FormGroup>
         <FormGroup>
           <Label for="confirmPassword">Confirm Password</Label>
-          <Input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password"/>
+          <Input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm your password"
+              onChange={this.props.onconfirmPassword}
+          />
         </FormGroup>
-        <Button color="success">Sign Up</Button>
+        <Button color="success" onClick={this.props.onCreateNewUser}>Sign Up</Button>
         <footer>
           <div styleName="footer-signup-login">
             <span>Already have an account?

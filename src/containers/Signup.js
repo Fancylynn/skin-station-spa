@@ -50,6 +50,23 @@ class Signup extends Component {
     }
   }
 
+  onUsernameChange = (e) => {
+    const username = e.target.value;
+    this.props.updateUsername(username);
+  }
+
+  onconfirmPassword = (e) => {
+    const confirmPassword = e.target.value;
+    this.props.confirmPassword(confirmPassword);
+  }
+
+  onCreateNewUser = (e) => {
+    e.preventDefault();
+    const {username, email, password} = this.props;
+    console.log(username);
+    this.props.createNewUser(username, email, password);
+  }
+
   login = (e) => {
     e.preventDefault();
     const {email, password} = this.props;
@@ -119,7 +136,27 @@ class Signup extends Component {
           <TabPane tabId="signUp">
             <Row>
               <Col>
-                <SignupForm/>
+                {this.props.createUserStatus !== "success" ?
+                  <SignupForm
+                      onUsernameChange={this.onUsernameChange}
+                      onEmailChange={this.onEmailChange}
+                      onPasswordChange={this.onPasswordChange}
+                      onconfirmPassword={this.onconfirmPassword}
+                      onCreateNewUser={this.onCreateNewUser}
+                      passwordConsistent={this.props.passwordConsistent}
+                      createUserStatus={this.props.createUserStatus}
+                  />
+                :
+                  <div>
+                    <Alert color="success" styleName="login-successful-message">
+                      <h4 className="alert-heading">Congratulations!</h4>
+                      <p>Your Skin Station Spa account has been successfully created. An confirmation email will be sent to your mailbox.</p>
+                      <hr/>
+                      <p>The page will be redirected within 5 seconds. If the page fails to reload in 5 seconds. Please click here.</p>
+                    </Alert>
+                  </div>
+              }
+
               </Col>
             </Row>
           </TabPane>
@@ -134,7 +171,9 @@ const mapStateToProps = (state) => {
     username: state.loginReducer.username,
     email: state.loginReducer.email,
     password: state.loginReducer.password,
-    loginStatus: state.loginReducer.loginStatus
+    loginStatus: state.loginReducer.loginStatus,
+    passwordConsistent: state.loginReducer.passwordConsistent,
+    createUserStatus: state.loginReducer.createUserStatus
   });
 };
 
