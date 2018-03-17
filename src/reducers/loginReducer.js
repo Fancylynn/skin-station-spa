@@ -3,7 +3,7 @@ const initialState = {
   email: "",
   password: "",
   loginStatus: "",
-  passwordConsistent: "",
+  passwordConsistent: true,
   createUserStatus: ""
 };
 

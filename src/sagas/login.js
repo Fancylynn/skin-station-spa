@@ -51,6 +51,7 @@ function* checkCreateNewUser(action) {
       yield put.resolve(loginSuccessful(data.username, "success"));
       browserHistory.push("/");
     } catch (e) {
+      yield put.resolve(createNewUserSuccessful("fail"));
       console.error("Fail to create new user");
     }
   }

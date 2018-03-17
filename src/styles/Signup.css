@@ -144,20 +144,12 @@ form {
     background-color: #FFBABA;
     margin: 10px 0px;
     padding: 8px; 
-    width: 55%;
 }
 
-/*.error-message span {
-    font-family: cursive, Helvetica, sans-serif;
-    line-height: 19px;
-    font-size: 16px;
-    color: #D8000C;
-
-}*/
-
-/*.no-error-message {
-    opacity: 0;
-}*/
+.error-meesage-tooltip {
+    /*background-color: palevioletred;
+    color: red !important;*/
+}
 
 .login-successful-message {
     border: 1px solid #4F8A10;

@@ -8,21 +8,23 @@ import {TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Alert} from "react
 import LoginForm from "../components/LoginForm";
 import SignupForm from "../components/SignupForm";
 
-// const mapDispathToProps = (dispatch) => {
-//   return ({
-//     updateEmail: bindActionCreators(updateEmail, dispatch),
-//     updatePassword: bindActionCreators(updatePassword, dispatch),
-//     doLogin: bindActionCreators(doLogin, dispatch)
-//   });
-// };
-
 
 class Signup extends Component {
   state = {
-    inputEmail: false,
+    inputEmail: false,        // whether input email or password in login form for styling use
     inputPassword: false,
     activeTab: "signIn"
   };
+
+  onUsernameChange = (e) => {
+    const username = e.target.value;
+    this.props.updateUsername(username);
+  }
+
+  onConfirmPassword = (e) => {
+    const confirmPassword = e.target.value;
+    this.props.confirmPassword(confirmPassword);
+  }
 
   onEmailChange = (e) => {
     const email = e.target.value;
@@ -50,20 +52,8 @@ class Signup extends Component {
     }
   }
 
-  onUsernameChange = (e) => {
-    const username = e.target.value;
-    this.props.updateUsername(username);
-  }
-
-  onconfirmPassword = (e) => {
-    const confirmPassword = e.target.value;
-    this.props.confirmPassword(confirmPassword);
-  }
-
-  onCreateNewUser = (e) => {
-    e.preventDefault();
+  onCreateNewUser = () => {
     const {username, email, password} = this.props;
-    console.log(username);
     this.props.createNewUser(username, email, password);
   }
 
@@ -119,6 +109,8 @@ class Signup extends Component {
                         loginStatus={this.props.loginStatus}
                         resetLoginStatus={this.props.resetLoginStatus}
                         changeLoginToSignup={this.changeLoginToSignup}
+                        invalidEmail={this.state.invalidEmail}
+                        invalidPassword={this.state.invalidPassword}
                     /> :
                     <div>
                       <Alert color="success" styleName="login-successful-message">
@@ -141,9 +133,10 @@ class Signup extends Component {
                       onUsernameChange={this.onUsernameChange}
                       onEmailChange={this.onEmailChange}
                       onPasswordChange={this.onPasswordChange}
-                      onconfirmPassword={this.onconfirmPassword}
                       onCreateNewUser={this.onCreateNewUser}
-                      passwordConsistent={this.props.passwordConsistent}
+                      username={this.props.username}
+                      email={this.props.email}
+                      password={this.props.password}
                       createUserStatus={this.props.createUserStatus}
                   />
                 :

@@ -23,6 +23,7 @@ class LoginForm extends Component {
               >
                             Email
                         </label>
+              {this.props.invalidEmail && <Alert color="danger">Email cannot be none!</Alert>}
               <input styleName="input-text-box"
                   type="text"
                   placeholder="Email"
@@ -42,6 +43,7 @@ class LoginForm extends Component {
               >
                             Password
                         </label>
+              {this.props.invalidPassword && <Alert color="danger">Password cannot be none!</Alert>}
               <input styleName="input-text-box"
                   type="text"
                   placeholder="Password"
