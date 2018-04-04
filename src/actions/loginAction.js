@@ -10,8 +10,8 @@ export const updateUsername = (username) => {
   return {type: "UPDATE_USERNAME", username};
 };
 
-export const doLogin = (email, password) => {
-  return {type: "LOGIN_SUBMITTED", email, password};
+export const doLogin = (username, password) => {
+  return {type: "LOGIN_SUBMITTED", username, password};
 };
 
 export const loginSuccessful = (username, success) => {

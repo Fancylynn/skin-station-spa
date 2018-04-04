@@ -1,6 +1,9 @@
 const initialState = {
   username: "",
+  firstName: "",
+  lastName: "",
   email: "",
+  phone: null,
   password: "",
   loginStatus: "",
   passwordConsistent: true,
@@ -38,6 +41,9 @@ export default function reducer(state = initialState, action) {
 
     case "CREATE_NEW_USER_FAIL":
       return {...state, createUserStatus: action.createUserStatus};
+
+    case "GET_USER_PROFILE_SUCCESS":
+      return {...state, username: action.profile.username};
 
     default:
       return state;

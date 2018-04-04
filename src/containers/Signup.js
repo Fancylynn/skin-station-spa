@@ -11,13 +11,18 @@ import SignupForm from "../components/SignupForm";
 
 class Signup extends Component {
   state = {
-    inputEmail: false,        // whether input email or password in login form for styling use
+    inputUsername: false,        // whether input username or password in login form for styling use
     inputPassword: false,
     activeTab: "signIn"
   };
 
   onUsernameChange = (e) => {
     const username = e.target.value;
+    if (username !== "") {
+      this.setState({inputUsername: true});
+    } else {
+      this.setState({inputUsername: false});
+    }
     this.props.updateUsername(username);
   }
 
@@ -28,11 +33,6 @@ class Signup extends Component {
 
   onEmailChange = (e) => {
     const email = e.target.value;
-    if (email !== "") {
-      this.setState({inputEmail: true});
-    } else {
-      this.setState({inputEmail: false});
-    }
     this.props.updateEmail(email);
   }
 
@@ -59,8 +59,8 @@ class Signup extends Component {
 
   login = (e) => {
     e.preventDefault();
-    const {email, password} = this.props;
-    this.props.doLogin(email, password);
+    const {username, password} = this.props;
+    this.props.doLogin(username, password);
   }
 
   changeLoginToSignup = () => {
@@ -101,16 +101,14 @@ class Signup extends Component {
                 <div>
                   {this.props.loginStatus !== "success" ?
                     <LoginForm
-                        onEmailChange={this.onEmailChange}
+                        onUsernameChange={this.onUsernameChange}
                         onPasswordChange={this.onPasswordChange}
                         login={this.login}
-                        inputEmail={this.state.inputEmail}
+                        inputUsername={this.state.inputUsername}
                         inputPassword={this.state.inputPassword}
                         loginStatus={this.props.loginStatus}
                         resetLoginStatus={this.props.resetLoginStatus}
                         changeLoginToSignup={this.changeLoginToSignup}
-                        invalidEmail={this.state.invalidEmail}
-                        invalidPassword={this.state.invalidPassword}
                     /> :
                     <div>
                       <Alert color="success" styleName="login-successful-message">

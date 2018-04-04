@@ -1,6 +1,7 @@
 import React, {PropTypes, Component} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/NavBar.css";
+import * as actions from "../actions/userAction";
 import {Link} from "react-router";
 import {connect} from "react-redux";
 import {
@@ -18,31 +19,20 @@ import {
   DropdownItem} from "reactstrap";
 
 class NavBar extends Component {
-  /* return(
-    <div styleName="nav-bar-fixed">
-      <Button color="danger">Danger!</Button>
-      <div styleName="nav-bar">
-        <ul>
-          <li><img styleName="logo" src="img/logo-inside.png" alt="logo icon"/></li>
-        </ul>
-        <div styleName="nav-links">
-          <ul>
-            <li><Link styleName="links" to="/">HOME</Link></li>
-            <li><Link styleName="links" to="/services">SERVICES</Link></li>
-            <li><Link styleName="links" to="/location">LOCATIONS</Link></li>
-            <li><Link styleName="links" to="/reservation">RESERVATION</Link></li>
-            <li><Link styleName="links" to="/aboutUs">ABOUT US</Link></li>
-            <li><Link styleName="links" to="/signup">SIGN IN</Link></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  );*/
 
   state = {
     isOpen: false,
-    dropdownOpen: false
+    dropdownOpen: false,
+    hasToken: false
   };
+
+  componentWillMount() {
+    const token = localStorage.getItem("token");
+    if (token !== null && token.length > 0) {
+      this.setState({hasToken: true});
+    }
+    this.props.tryGetUserProfile(token);
+  }
 
   toggle = () => {
     this.setState({
@@ -83,7 +73,7 @@ class NavBar extends Component {
                 <NavLink href="/aboutUs" styleName="nav-links">About Us</NavLink>
               </NavItem>
               <NavItem>
-                {this.props.loginStatus !== "success" ?
+                {this.props.loginStatus !== "success" && !this.state.hasToken ?
                   <NavLink href="/signup" styleName="nav-links">Sign In</NavLink>
                       :
                   <Dropdown isOpen={this.state.dropdownOpen} toggle={this.dropdownToggle}>
@@ -113,4 +103,4 @@ const mapStateToProps = (state) => {
   });
 };
 
-export default connect(mapStateToProps)(cssModules(NavBar, styles));
+export default connect(mapStateToProps, actions)(cssModules(NavBar, styles));

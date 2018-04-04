@@ -4,16 +4,23 @@ import {loginSuccessful, loginFailed, createNewUserSuccessful, createNewUserFail
 import {browserHistory} from "react-router";
 
 
-function sendLoginRequest(email, password) {
+function sendLoginRequest(username, password) {
   return axios.get("http://api.fancylynn.com/skinstationspa/api/users/login",
     {
-      params: {email: email, password: password}}
+      params: {username: username, password: password}}
     );
 }
 
 function sendCreateNewUserRequest(username, email, password) {
   return axios.post("http://api.fancylynn.com/skinstationspa/api/users/signup",
     {username: username, email: email, password: password});
+}
+
+function getUserProfile(token) {
+  return axios.get("http://api.fancylynn.com/skinstationspa/api/users/userprofile",
+    {
+      headers: {Authorization: token}}
+  );
 }
 
 function delay() {
@@ -27,9 +34,13 @@ function delay() {
 function* checkLogin(action) {
   if(action !== undefined) {
     try {
-      const response = yield call(sendLoginRequest, action.email, action.password);
+      const response = yield call(sendLoginRequest, action.username, action.password);
       const {data} = response;
-      yield put.resolve(loginSuccessful(data.username, "success"));
+      localStorage.setItem("token", data.token);
+      const curtToken = "Bearer " + data.token;
+      console.log(curtToken);
+      const profileResponse = yield call(getUserProfile, curtToken);
+      yield put.resolve(loginSuccessful(profileResponse.data.username, "success"));
       yield call(delay);
       browserHistory.push("/");
     } catch (e) {
@@ -56,6 +67,7 @@ function* checkCreateNewUser(action) {
     }
   }
 }
+
 
 function* loginAPI() {
   yield takeEvery("LOGIN_SUBMITTED", checkLogin);

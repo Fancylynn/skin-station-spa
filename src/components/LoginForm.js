@@ -14,21 +14,20 @@ class LoginForm extends Component {
           Ooops! Your username or password is not correct!
         </Alert>
         <form onSubmit={this.props.login}>
-          <div styleName="input-wrapper" title="Email">
+          <div styleName="input-wrapper" title="username">
             <div styleName="input-area">
-              <label styleName={this.props.inputEmail ?
+              <label styleName={this.props.inputUsername ?
                                           "input-name-not-empty"
                                           :
                                           "input-name-empty"}
               >
-                            Email
+                            Username
                         </label>
-              {this.props.invalidEmail && <Alert color="danger">Email cannot be none!</Alert>}
               <input styleName="input-text-box"
                   type="text"
-                  placeholder="Email"
+                  placeholder="Username"
                   maxLength="256"
-                  onChange={this.props.onEmailChange}
+                  onChange={this.props.onUsernameChange}
                   required
               />
               <div styleName="input-underline"/>
@@ -43,7 +42,6 @@ class LoginForm extends Component {
               >
                             Password
                         </label>
-              {this.props.invalidPassword && <Alert color="danger">Password cannot be none!</Alert>}
               <input styleName="input-text-box"
                   type="text"
                   placeholder="Password"
