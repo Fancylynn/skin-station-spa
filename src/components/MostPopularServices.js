@@ -29,7 +29,7 @@ const POP_SERVICE = [
   },
   {
     id: 5,
-    name: "Permanent Make-up",
+    name: "Permanent Makeup",
     content: "Freedom from daily makeup application using micro insertions",
     image: "img/pop-service5.jpg"
   },
@@ -45,7 +45,7 @@ const POP_SERVICE = [
 class PopService extends Component {
   state = {
     curtService: 1,
-    width: 0
+    width: window.innerWidth
   };
 
   componentDidMount() {
@@ -57,9 +57,10 @@ class PopService extends Component {
     window.removeEventListener("resize", this.updateWindowDimensions);
   }
 
-  updateWindowDimensions() {
+  updateWindowDimensions = () => {
     this.setState({width: window.innerWidth});
   }
+
 
   onChangeService = (id) => {
     this.setState({curtService: id});
@@ -103,27 +104,61 @@ class PopService extends Component {
           <img src={service.image} alt={service.name}/>
           <p>{service.content}</p>
         </div>
-        );
+      );
+    });
+
+    const popServiceMobileLeft = POP_SERVICE.slice(0, 3).map((service, idx) => {
+      return (
+        <div key={idx}>
+          <h4 styleName="pop-service-item-motile-title">{service.name}</h4>
+          <p styleName="pop-service-item-motile-content">{service.content}</p>
+        </div>
+      );
+    });
+
+    const popServiceMobileRight = POP_SERVICE.slice(3).map((service, idx) => {
+      return (
+        <div key={idx}>
+          <h4 styleName="pop-service-item-motile-title">{service.name}</h4>
+          <p styleName="pop-service-item-motile-content">{service.content}</p>
+        </div>
+      );
     });
 
     return(
-      <div styleName="pop-service-container">
-        <div styleName="pop-service-row">
-          <h1 styleName="pop-service-title">Most Popular Services</h1>
-          <div styleName="pop-services-display">
-            <div styleName="pop-service-left">
-              {leftService}
-            </div>
+      <div>
+        {this.state.width > 768 ?
+          <div styleName="pop-service-container">
+            <div styleName="pop-service-row">
+              <h1 styleName="pop-service-title">Most Popular Services</h1>
+              <div styleName="pop-services-display">
+                <div styleName="pop-service-left">
+                  {leftService}
+                </div>
 
-            <div styleName="pop-service-middle">
-              {middleService}
-            </div>
+                <div styleName="pop-service-middle">
+                  {middleService}
+                </div>
 
-            <div styleName="pop-service-right">
-              {rightService}
+                <div styleName="pop-service-right">
+                  {rightService}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          :
+          <div styleName="pop-service-container-mobile">
+            <h2 styleName="pop-service-title-mobile">Most Popular Services</h2>
+            <div styleName="pop-services-display-mobile">
+              <div styleName="pop-services-display-mobile-items">
+                {popServiceMobileLeft}
+              </div>
+              <div styleName="pop-services-display-mobile-items">
+                {popServiceMobileRight}
+              </div>
+            </div>
+          </div>
+        }
       </div>
     );
   }
