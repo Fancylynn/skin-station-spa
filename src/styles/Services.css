@@ -38,7 +38,7 @@
         color: white;
         font-family: 'Muli',sans-serif;
         font-weight: bold;
-        font-size: 15px;
+        font-size: 20px;
         width: 100%;
         text-align: center; 
     }
@@ -49,6 +49,13 @@
         font-weight: bold;
         vertical-align: middle;
         top: 0;
+    }
+
+    .display-item {
+        width: 40%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+
     }
 }
 
@@ -104,6 +111,13 @@
         vertical-align: middle;
         top: 0;
     }
+
+    .display-item {
+        width: 25%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -157,6 +171,13 @@
         vertical-align: middle;
         top: 0;
     }
+
+    .display-item {
+        width: 25%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+
+    }
 }
 
 
@@ -177,12 +198,6 @@
     flex-wrap: wrap;
 }
 
-.display-item {
-    width: 25%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-
-}
 
 .display-img {
     vertical-align: bottom;
