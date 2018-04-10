@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/MostPopularServices.css";
+import {Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from "reactstrap";
 
 const POP_SERVICE = [
   {
@@ -107,21 +108,15 @@ class PopService extends Component {
       );
     });
 
-    const popServiceMobileLeft = POP_SERVICE.slice(0, 3).map((service, idx) => {
+    const serviceCards = POP_SERVICE.map((service, idx) => {
       return (
-        <div key={idx}>
-          <h4 styleName="pop-service-item-motile-title">{service.name}</h4>
-          <p styleName="pop-service-item-motile-content">{service.content}</p>
-        </div>
-      );
-    });
-
-    const popServiceMobileRight = POP_SERVICE.slice(3).map((service, idx) => {
-      return (
-        <div key={idx}>
-          <h4 styleName="pop-service-item-motile-title">{service.name}</h4>
-          <p styleName="pop-service-item-motile-content">{service.content}</p>
-        </div>
+        <Card key={idx} styleName="card-container">
+          <CardImg top StyleName="card-image" src={service.image} alt={service.name}/>
+          <CardBody>
+            <CardTitle styleName="card-title">{service.name}</CardTitle>
+            <CardText styleName="card-text">{service.content}</CardText>
+          </CardBody>
+        </Card>
       );
     });
 
@@ -147,15 +142,10 @@ class PopService extends Component {
             </div>
           </div>
           :
-          <div styleName="pop-service-container-mobile">
-            <h2 styleName="pop-service-title-mobile">Most Popular Services</h2>
-            <div styleName="pop-services-display-mobile">
-              <div styleName="pop-services-display-mobile-items">
-                {popServiceMobileLeft}
-              </div>
-              <div styleName="pop-services-display-mobile-items">
-                {popServiceMobileRight}
-              </div>
+          <div>
+            <h3 styleName="pop-service-title">Most Popular Services</h3>
+            <div styleName="pop-service-container-mobile">
+              {serviceCards}
             </div>
           </div>
         }
