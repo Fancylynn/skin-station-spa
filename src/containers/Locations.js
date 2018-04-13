@@ -8,8 +8,22 @@ class Locations extends Component {
   state = {
     location: "manhattan",
     lat: 40.718282,
-    lng: -73.992011
+    lng: -73.992011,
+    width: window.innerWidth
   };
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    this.setState({width: window.innerWidth});
+  }
 
   onManhattan = () => {
     this.setState({location: "manhattan", lat: 40.718282, lng: -73.992011});
@@ -47,7 +61,7 @@ class Locations extends Component {
                   onClick={this.onManhattan}
               >
                 <h3>Manhattan</h3>
-                <p>113 Eldridge Street (Basement), New York, NY 1002</p>
+                <p>113 Eldridge Street (Basement), New York, NY 10002</p>
                 <p>(Between Grand and Broome Street)</p>
                 <p>Tel: 212-343-7911</p>
                 <p>Email: skinstation.manhattan@gmail.com</p>
@@ -108,9 +122,11 @@ class Locations extends Component {
               </div>
             </div>
           </div>
-          <div styleName="google-map-container">
-            <ReactGoogleMaps lat={this.state.lat} lng={this.state.lng}/>
-          </div>
+          {this.state.width > 500 &&
+            <div styleName="google-map-container">
+              <ReactGoogleMaps lat={this.state.lat} lng={this.state.lng}/>
+            </div>
+          }
         </div>
         <BackIcon/>
       </div>
