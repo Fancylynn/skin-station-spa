@@ -13,6 +13,13 @@
         margin-top: 10px;
     }
 
+    .service-item-container {
+        width: 100%;
+        margin-left:3%;
+        margin-right: 3%;
+        cursor: pointer;
+    }
+
     .service-name {
         font-family: inherit;
         color: #000000;
@@ -64,6 +71,12 @@
         margin-top: 10px;
     }
 
+    .service-item-container {
+        width: 80%;
+        margin: 5px auto;
+        cursor: pointer;
+    }
+
     .service-name {
         font-family: inherit;
         color: #000000;
@@ -106,7 +119,7 @@
     }
 
     .nav-bar {
-        width: 100%;
+        width: 90%;
         font-size: 25px;
         font-family: Arial, Helvetica, sans-serif;
         margin-left: auto;
@@ -115,7 +128,7 @@
     }
 
     .service-item-container {
-        width: 90%;
+        width: 80%;
         margin: 5px auto;
         cursor: pointer;
     }
