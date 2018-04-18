@@ -1,3 +1,60 @@
+@media screen and (max-width:500px) {
+    .calendar-content {
+    }
+
+    .calendar-service h2 {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 20px;
+    }
+
+    .calendar-service {
+        margin-left: 5%;
+        border: 1px solid #ccc;
+        width: 75%;
+        margin-bottom: 3%;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width:768px) {
+    .calendar-content {
+        display: flex;
+    }
+
+    .calendar-service h2 {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 25px;
+    }
+
+    .calendar-service {
+        margin-left: 5%;
+        border: 1px solid #ccc;
+        width: 40%;
+        margin-bottom: 3%;
+        margin-top: 2%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .calendar-content {
+        display: flex;
+    }
+
+    .calendar-service h2 {
+        text-align: center;
+        margin-top: 5%;
+    }
+
+    .calendar-service {
+        margin-left: 10%;
+        border: 1px solid #ccc;
+        width: 35%;
+        margin-bottom: 3%;
+        margin-top: 2%;
+    }
+}
 .calendar-container {
     width: 50%;
 }
@@ -7,21 +64,6 @@
     margin: 0 auto;
 }
 
-.calendar-content {
-    display: flex;
-}
-
-.calendar-service {
-    margin-left: 10%;
-    border: 1px solid #ccc;
-    width: 30%;
-    margin-bottom: 3%;
-}
-
-.calendar-service h2 {
-    text-align: center;
-    margin-top: 5%;
-}
 
 .calendar-service-name {
     line-height: 33px;

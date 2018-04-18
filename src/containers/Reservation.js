@@ -448,10 +448,10 @@ class Reservation extends Component {
           <div styleName="service-schedule-online">
             <div styleName="calendar-title-container">
               <div styleName="back-icon" onClick={this.onBackToServiceBook}>
-                <img src="img/arrow-icon.png" alt="back icon"/>
+                <img src="img/return.png" alt="back icon"/>
                 <p> Back </p>
               </div>
-              <div styleName="calendar-title-container">
+              <div styleName="calendar-title-container-detail">
                 <p styleName="calendar-title">Schedule Online</p>
                 <p>Time Zone: EST</p>
               </div>

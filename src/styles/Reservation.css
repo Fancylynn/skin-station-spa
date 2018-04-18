@@ -1,6 +1,6 @@
 @media screen and (max-width:500px) {
     .title {
-        font: italic normal normal 20px/1.4em belinda-w00-regular,script;
+        font: italic normal normal 30px/1.4em belinda-w00-regular,script;
         color: #000000;
     }
 
@@ -52,6 +52,37 @@
         width: 20%;
         margin-top: 10px;
         cursor: pointer;
+    }
+
+    .service-schedule-online {
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .calendar-title-container {
+        width: 80%;
+        color: #FAB89D;
+        font-weight: border;
+        margin-left: 3%;
+    }
+
+    .calendar-container {
+        margin-left: 10%;
+    }
+
+    .reservation-confirmation {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        color: #FAB89D;
+    }
+
+    .reservation-confirmation h1{
+        font-size: 20px;
+    }
+
+    .reservation-confirmation h3{
+        font-size: 15px;
     }
 }
 
@@ -110,6 +141,41 @@
         margin-top: 10px;
         cursor: pointer;
     }
+
+    .service-schedule-online {
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .calendar-title-container {
+        width: 80%;
+        color: #FAB89D;
+        font-weight: border;
+        margin-left: 5%;
+    }
+
+    .calendar-title-container-detail {
+        margin-left: 5%;
+    }
+
+    .calendar-container {
+        margin-left: 5%;
+    }
+
+    .reservation-confirmation h1{
+        font-size: 25px;
+    }
+
+    .reservation-confirmation h3{
+        font-size: 20px;
+    }
+
+    .reservation-confirmation {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        color: #FAB89D;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -166,6 +232,33 @@
         width: 20%;
         margin-top: 10px;
         cursor: pointer;
+    }
+
+    .service-schedule-online {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .calendar-title-container {
+        width: 80%;
+        color: #FAB89D;
+        font-weight: border;
+        margin-left: 13%;
+    }
+
+    .calendar-title-container-detail {
+        margin-left: 10%;
+    }
+
+    .calendar-container {
+        margin-left: 19%;
+    }
+
+    .reservation-confirmation {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        color: #FAB89D;
     }
 }
 
@@ -224,42 +317,25 @@
     bottom: 20px;
 }
 
-.service-schedule-online {
-    margin: 0 auto;
-}
-
-.calendar-title-container {
-    width: 60%;
-    margin-left: 20%;
-    color: #FAB89D;
-    font-weight: border;
-}
-
 .back-icon {
     display: flex;
     cursor: pointer;
     vertical-align: middle;
-    margin-left: 10%;
 }
 
-.back-icon img{
-    transform:rotate(180deg);
-    line-height: 31px;
-    text-align: left;
-    width: 2%;
-    height: 2%;
+.back-icon img {
+    transform: rotateY(180deg);
+    margin-right: 2%;
+    width: 30px;
+    height: 30px;
 }
 
-.calendar-title-container {
-    margin-left: 16%;
-}
-
-.calendar-container {
-    margin-left: 24%;
+.calendar-title-container p {
+    font-family: inherit;
+    font-size: 20px;
 }
 
 .calendar {
-    width: 40%;
     margin: 0 auto;
 }
 
@@ -268,11 +344,4 @@
     line-height: 39px;
     font-family: 'libre baskerville','serif';
     color: #000000;
-}
-
-.reservation-confirmation {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    color: #FAB89D;
 }
