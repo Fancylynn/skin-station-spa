@@ -1,3 +1,161 @@
+@media screen and (max-width:500px) {
+    .title {
+        font: italic normal normal 20px/1.4em belinda-w00-regular,script;
+        color: #000000;
+    }
+
+    .nav-bar {
+        width: 100%;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+
+    .service-name {
+        font-family: inherit;
+        color: #000000;
+        width: 40%;
+        transition: color .3s ease;
+        margin-right: 5%;
+        line-height: 1.5em;
+        font-size: 15px;
+        margin-bottom: 5px;
+        word-break: break-word;
+        margin-top: 10px;
+        margin-left: 2%;
+    }
+
+    .service-time-and-money {
+        font-size: 12px;
+        width: 20%;
+        margin-right: 5%;
+        margin-top: 10px;
+        line-height: 1.5em;
+    }
+
+    .book-button {
+        color: #FFFFFF;
+        background-color: #FAB89D;
+        border: 1px solid#FAB89D;
+        font-size: 14px;
+        line-height: 24px;
+        height: 30px;
+        width: 20%;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (min-width: 500px) and (max-width:768px) {
+    .title {
+        font: italic normal normal 40px/1.4em belinda-w00-regular,script;
+        color: #000000;
+    }
+
+    .nav-bar {
+        width: 100%;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+
+    .service-name {
+        font-family: inherit;
+        color: #000000;
+        width: 30%;
+        transition: color .3s ease;
+        margin-right: 6%;
+        line-height: 1.5em;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        word-break: break-word;
+        margin-top: 10px;
+        margin-left: 2%;
+    }
+
+    .service-time-and-money {
+        font-size: 16px;
+        width: 30%;
+        margin-right: 6%;
+        margin-top: 10px;
+        line-height: 1.5em;
+    }
+
+    .book-button {
+        color: #FFFFFF;
+        background-color: #FAB89D;
+        border: 1px solid#FAB89D;
+        font-size: 15px;
+        line-height: 20px;
+        width: 20%;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .title {
+        font: italic normal normal 60px/1.4em belinda-w00-regular,script;
+        color: #000000;
+    }
+
+    .nav-bar {
+        width: 100%;
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+
+    .service-item-container {
+        width: 90%;
+        margin: 5px auto;
+        cursor: pointer;
+    }
+
+    .service-name {
+        font-family: inherit;
+        color: #000000;
+        min-width: 170px;
+        width: 40%;
+        transition: color .3s ease;
+        margin-right: 48px;
+        line-height: 1.5em;
+        font-size: 20px;
+        margin-bottom: 5px;
+        word-break: break-word;
+        margin-top: 10px;
+        margin-left: 2%;
+    }
+
+    .service-time-and-money {
+        font-size: 16px;
+        width: 20%;
+        min-width: 170px;
+        margin-right: 48px;
+        margin-top: 10px;
+        line-height: 1.5em;
+    }
+
+    .book-button {
+        color: #FFFFFF;
+        background-color: #FAB89D;
+        border: 1px solid#FAB89D;
+        font-size: 16px;
+        line-height: 24px;
+        width: 20%;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+}
+
 .reservation-title {
     line-height: 0.9em;
     text-align: center;
@@ -7,25 +165,13 @@
     margin-top: 100px;
 }
 
-.title {
-    font: italic normal normal 60px/1.4em belinda-w00-regular,script;
-    color: #000000;
-}
-
-.nav-bar {
-    width: 100%;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0 auto;
-    margin-top: 10px;
-}
 
 .nav-bar ul {
     display: flex;
     list-style: none;
     text-align: center;
     margin:0 auto;
-    width: 45%;
+    width: 80%;
 }
 
 .nav-li {
@@ -46,12 +192,6 @@
     font-weight: bolder;
 }
 
-.service-item-container {
-    width: 80%;
-    margin: 5px auto;
-    cursor: pointer;
-}
-
 .service-item {
     width: 100%;
     margin-top: 20px;
@@ -65,41 +205,6 @@
     display:flex;
 }
 
-.service-name {
-    font-family: 'libre baskerville','serif';
-    color: #000000;
-    min-width: 170px;
-    width: 40%;
-    transition: color .3s ease;
-    margin-right: 48px;
-    line-height: 1.5em;
-    font-size: 20px;
-    margin-bottom: 5px;
-    word-break: break-word;
-    margin-top: 10px;
-    margin-left: 2%;
-}
-
-.service-time-and-money {
-    font-size: 16px;
-    width: 20%;
-    min-width: 170px;
-    margin-right: 48px;
-    margin-top: 10px;
-    line-height: 1.5em;
-}
-
-.book-button {
-    color: #FFFFFF;
-    background-color: #FAB89D;
-    border: 1px solid#FAB89D;
-    font-size: 16px;
-    line-height: 24px;
-    width: 20%;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
 .reservation-list {
     height: 100%;
     position: absolute;
@@ -109,6 +214,7 @@
 .service-schedule-online {
     margin: 0 auto;
 }
+
 .calendar-title-container {
     width: 60%;
     margin-left: 20%;
