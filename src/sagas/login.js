@@ -57,7 +57,7 @@ function* checkCreateNewUser(action) {
       yield call(sendCreateNewUserRequest, action.username, action.email, action.password);
       yield put.resolve(createNewUserSuccessful("success"));
       yield call(delay);
-      const response = yield call(sendLoginRequest, action.email, action.password);
+      const response = yield call(sendLoginRequest, action.username, action.password);
       const {data} = response;
       yield put.resolve(loginSuccessful(data.username, "success"));
       browserHistory.push("/");
