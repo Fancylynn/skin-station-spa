@@ -59,9 +59,15 @@ function* checkCreateNewUser(action) {
       yield call(delay);
       const response = yield call(sendLoginRequest, action.username, action.password);
       const {data} = response;
-      yield put.resolve(loginSuccessful(data.username, "success"));
+      localStorage.setItem("token", data.token);
+      const curtToken = "Bearer " + data.token;
+      console.log(curtToken);
+      const profileResponse = yield call(getUserProfile, curtToken);
+      yield put.resolve(loginSuccessful(profileResponse.data.username, "success"));
       browserHistory.push("/");
     } catch (e) {
+      console.log(">>>>>>>>>>>>>");
+      console.log(e);
       yield put.resolve(createNewUserSuccessful("fail"));
       console.error("Fail to create new user");
     }
