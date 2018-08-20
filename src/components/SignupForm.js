@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/Signup.css";
-import {Button, Form, FormGroup, Label, Input, FormText, Alert, Tooltip} from "reactstrap";
+import {Button, Form, FormGroup, Label, Input, Tooltip} from "reactstrap";
 
 class SignupForm extends Component {
   state = {
@@ -41,6 +41,7 @@ class SignupForm extends Component {
   passwordInConsistent = () => this.props.password !== this.state.confirmPassword;
 
   render() {
+    const {createUserStatus} = this.props;
     return (
       <Form styleName="signup-form-container">
         <h3>Welcome to </h3>
@@ -64,6 +65,15 @@ class SignupForm extends Component {
               placeholder="Username"
               onChange={this.props.onUsernameChange}
           />
+          <Tooltip
+              style={{"background-color": "#dc3545"}}
+              placement="top"
+              isOpen={createUserStatus === "username_fail"}
+              autohide={false}
+              target="username"
+          >
+              User with this username has already existed.
+          </Tooltip>
         </FormGroup>
         <FormGroup>
           <Label for="email">Email</Label>
@@ -79,7 +89,7 @@ class SignupForm extends Component {
           <Tooltip
               style={{"background-color": "#dc3545"}}
               placement="top"
-              isOpen={this.props.createUserStatus === "fail"}
+              isOpen={createUserStatus === "email_fail"}
               autohide={false}
               target="email"
           >

@@ -7,7 +7,8 @@ const initialState = {
   password: "",
   loginStatus: "",
   passwordConsistent: true,
-  createUserStatus: ""
+  createUserStatus: "",
+  errorSignupMessage: ""
 };
 
 export default function reducer(state = initialState, action) {
@@ -39,11 +40,25 @@ export default function reducer(state = initialState, action) {
     case "CREATE_NEW_USER_SUCCESSFUL":
       return {...state, createUserStatus: action.createUserStatus};
 
-    case "CREATE_NEW_USER_FAIL":
-      return {...state, createUserStatus: action.createUserStatus};
-
     case "GET_USER_PROFILE_SUCCESS":
       return {...state, username: action.profile.username};
+
+    case "RETURE_SIGN_UP_ERROR_MESSAGE":
+      if (action.errorSignupMessage.includes("email")) {
+        return {
+          ...state,
+          errorSignupMessage: action.errorSignupMessage,
+          createUserStatus: "email_fail"
+        };
+      }
+      if (action.errorSignupMessage.includes("username")) {
+        return {
+          ...state,
+          errorSignupMessage: action.errorSignupMessage,
+          createUserStatus: "username_fail"
+        };
+      }
+      return {...state, errorSignupMessage: action.errorSignupMessage};
 
     default:
       return state;

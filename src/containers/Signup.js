@@ -164,7 +164,8 @@ const mapStateToProps = (state) => {
     password: state.loginReducer.password,
     loginStatus: state.loginReducer.loginStatus,
     passwordConsistent: state.loginReducer.passwordConsistent,
-    createUserStatus: state.loginReducer.createUserStatus
+    createUserStatus: state.loginReducer.createUserStatus,
+    errorSignupMessage: state.loginReducer.errorSignupMessage
   });
 };
 

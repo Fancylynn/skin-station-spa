@@ -1,9 +1,16 @@
-import {call, put, takeEvery, takeLatest} from "redux-saga/effects";
+import {call, put, takeEvery} from "redux-saga/effects";
 import axios from "axios";
-import {loginSuccessful, loginFailed, createNewUserSuccessful, createNewUserFail} from "../actions/loginAction";
+import {
+  loginSuccessful,
+  loginFailed,
+  createNewUserSuccessful,
+  createNewUserFail,
+  returnSignUpErrorMessage
+} from "../actions/loginAction";
 import {browserHistory} from "react-router";
 
 
+// HTTP.GET login API
 function sendLoginRequest(username, password) {
   return axios.get("http://api.fancylynn.com/skinstationspa/api/users/login",
     {
@@ -11,11 +18,13 @@ function sendLoginRequest(username, password) {
     );
 }
 
+// HTTP.POST signup API
 function sendCreateNewUserRequest(username, email, password) {
   return axios.post("http://api.fancylynn.com/skinstationspa/api/users/signup",
     {username: username, email: email, password: password});
 }
 
+// HTTP.GET user profile API
 function getUserProfile(token) {
   return axios.get("http://api.fancylynn.com/skinstationspa/api/users/userprofile",
     {
@@ -23,6 +32,8 @@ function getUserProfile(token) {
   );
 }
 
+// Delay duration
+// Give more time for finishing api request and data process
 function delay() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -31,6 +42,7 @@ function delay() {
   });
 }
 
+// Deal with login api request and get response
 function* checkLogin(action) {
   if(action !== undefined) {
     try {
@@ -38,19 +50,18 @@ function* checkLogin(action) {
       const {data} = response;
       localStorage.setItem("token", data.token);
       const curtToken = "Bearer " + data.token;
-      console.log(curtToken);
       const profileResponse = yield call(getUserProfile, curtToken);
       yield put.resolve(loginSuccessful(profileResponse.data.username, "success"));
       yield call(delay);
       browserHistory.push("/");
     } catch (e) {
       yield put.resolve(loginFailed("fail"));
-      console.log(e);
       console.error("Fail to login");
     }
   }
 }
 
+// Deal with signup api request and get response
 function* checkCreateNewUser(action) {
   if(action !== undefined) {
     try {
@@ -61,14 +72,13 @@ function* checkCreateNewUser(action) {
       const {data} = response;
       localStorage.setItem("token", data.token);
       const curtToken = "Bearer " + data.token;
-      console.log(curtToken);
       const profileResponse = yield call(getUserProfile, curtToken);
       yield put.resolve(loginSuccessful(profileResponse.data.username, "success"));
       browserHistory.push("/");
     } catch (e) {
-      console.log(">>>>>>>>>>>>>");
-      console.log(e);
-      yield put.resolve(createNewUserSuccessful("fail"));
+      const errorMessage = e.response.data;
+      console.log(errorMessage);
+      yield put.resolve(returnSignUpErrorMessage(errorMessage));
       console.error("Fail to create new user");
     }
   }
