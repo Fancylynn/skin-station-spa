@@ -52,3 +52,8 @@ export const createNewUserSuccessful = (createUserStatus) => {
 export const returnSignUpErrorMessage = (errorSignupMessage) => {
   return {type: "RETURE_SIGN_UP_ERROR_MESSAGE", errorSignupMessage};
 };
+
+// Open or close logout pop up window action
+export const openLogoutPopupWindow = (openLogoutWindowOrNot) => {
+  return {type: "OPEN_LOGOUT_POPUP_WINDOW", openLogoutWindowOrNot};
+};

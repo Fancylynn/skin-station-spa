@@ -11,6 +11,7 @@ import Policy from "./components/Policy";
 import Contact from "./components/Contact";
 import Layout from "./components/Layout";
 import FAQ from "./components/FAQ";
+import LogoutPopup from "./components/LogoutPopup";
 
 class App extends PureComponent {
   render() {
@@ -24,6 +25,7 @@ class App extends PureComponent {
           <Route path="/reservation" component={Reservation}/>
           <Route path="/aboutUs" component={AboutUs}/>
           <Route path="/contact" component={Contact}/>
+          <Route path="/logout" component={LogoutPopup}/>
         </Route>
         <Route path="/policy" component={Policy}/>
         <Route path="/FAQ" component={FAQ}/>

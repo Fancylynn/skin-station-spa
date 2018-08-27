@@ -8,7 +8,8 @@ const initialState = {
   loginStatus: "",
   passwordConsistent: true,
   createUserStatus: "",
-  errorSignupMessage: ""
+  errorSignupMessage: "",
+  openLogoutPopupWindowStatus: ""
 };
 
 export default function reducer(state = initialState, action) {
@@ -59,6 +60,9 @@ export default function reducer(state = initialState, action) {
         };
       }
       return {...state, errorSignupMessage: action.errorSignupMessage};
+
+    case "OPEN_LOGOUT_POPUP_WINDOW":
+      return {...state, openLogoutPopupWindowStatus: action.openLogoutWindowOrNot};
 
     default:
       return state;

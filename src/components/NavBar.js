@@ -1,8 +1,9 @@
-import React, {PropTypes, Component} from "react";
+import React, {Component} from "react";
 import cssModules from "react-css-modules";
 import styles from "../styles/NavBar.css";
-import * as actions from "../actions/userAction";
-import {Link} from "react-router";
+import {tryGetUserProfile} from "../actions/userAction";
+// import {Link} from "react-router";
+import {openLogoutPopupWindow} from "../actions/loginAction";
 import {connect} from "react-redux";
 import {
   Collapse,
@@ -13,7 +14,6 @@ import {
   NavItem,
   NavLink,
   Dropdown,
-  UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem} from "reactstrap";
@@ -44,6 +44,10 @@ class NavBar extends Component {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
+  }
+
+  openLogoutPopoutWindow = () => {
+    this.props.openLogoutPopupWindow(true);
   }
 
 
@@ -83,7 +87,10 @@ class NavBar extends Component {
                     <DropdownMenu>
                       <DropdownItem>User Profile</DropdownItem>
                       <DropdownItem>Reservation History</DropdownItem>
-                      <DropdownItem>Log Out</DropdownItem>
+                      <DropdownItem onClick={this.openLogoutPopoutWindow}>
+                        {/* <NavLink href="/logout">Logout</NavLink>*/}
+                        Logout
+                      </DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                     }
@@ -103,4 +110,9 @@ const mapStateToProps = (state) => {
   });
 };
 
-export default connect(mapStateToProps, actions)(cssModules(NavBar, styles));
+const mapDispatchToProps = {
+  tryGetUserProfile,
+  openLogoutPopupWindow
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(cssModules(NavBar, styles));

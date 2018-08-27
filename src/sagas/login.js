@@ -84,10 +84,20 @@ function* checkCreateNewUser(action) {
   }
 }
 
+// User log out
+function* userLogout(action) {
+  if (action !== undefined) {
+    localStorage.removeItem("token");
+    yield call(delay);
+    browserHistory.push("/");
+  }
+}
+
 
 function* loginAPI() {
   yield takeEvery("LOGIN_SUBMITTED", checkLogin);
   yield takeEvery("CREATE_NEW_USER", checkCreateNewUser);
+  yield takeEvery("LOGOUT", userLogout);
 }
 
 export default loginAPI;
