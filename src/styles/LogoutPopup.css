@@ -1,0 +1,15 @@
+.popup-window-title {
+    font-family: fantasy;
+    font-weight: 500;
+    text-align: center;
+}
+
+.popup-window-button-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.popup-logout-button {
+    margin-left: 5%;
+}

@@ -57,3 +57,8 @@ export const returnSignUpErrorMessage = (errorSignupMessage) => {
 export const openLogoutPopupWindow = (openLogoutWindowOrNot) => {
   return {type: "OPEN_LOGOUT_POPUP_WINDOW", openLogoutWindowOrNot};
 };
+
+// Realize logout function
+export const logout = () => {
+  return {type: "LOGOUT"};
+};

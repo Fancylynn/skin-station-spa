@@ -4,7 +4,7 @@ import {
   loginSuccessful,
   loginFailed,
   createNewUserSuccessful,
-  createNewUserFail,
+  openLogoutPopupWindow,
   returnSignUpErrorMessage
 } from "../actions/loginAction";
 import {browserHistory} from "react-router";
@@ -87,9 +87,14 @@ function* checkCreateNewUser(action) {
 // User log out
 function* userLogout(action) {
   if (action !== undefined) {
-    localStorage.removeItem("token");
-    yield call(delay);
-    browserHistory.push("/");
+    try {
+      localStorage.removeItem("token");
+      yield put.resolve(openLogoutPopupWindow(false));
+      browserHistory.push("/"); // back to homepage
+      window.location.reload(); // redux store will be cleared after refresh
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 

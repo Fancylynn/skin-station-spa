@@ -9,7 +9,7 @@ const initialState = {
   passwordConsistent: true,
   createUserStatus: "",
   errorSignupMessage: "",
-  openLogoutPopupWindowStatus: ""
+  openLogoutPopupWindowStatus: false
 };
 
 export default function reducer(state = initialState, action) {
