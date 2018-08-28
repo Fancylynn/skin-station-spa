@@ -90,9 +90,10 @@ function* userLogout(action) {
     try {
       localStorage.removeItem("token");
       yield put.resolve(openLogoutPopupWindow(false));
-      browserHistory.push("/"); // back to homepage
-      window.location.reload(); // redux store will be cleared after refresh
-    } catch (e) {
+      // browserHistory.push("/"); // back to homepage
+      // window.location.reload(); // redux store will be cleared after refresh
+      window.location.assign("/");
+  } catch (e) {
       console.log(e);
     }
   }
