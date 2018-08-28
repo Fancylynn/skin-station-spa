@@ -12,6 +12,7 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
+    width: "40%",
     transform: "translate(-50%, -50%)"
   }
 };
@@ -33,8 +34,8 @@ class LogoutPopup extends Component {
       >
         <h2 styleName="popup-window-title">Confirm to logout</h2>
         <div styleName="popup-window-button-container">
-          <button onClick={this.onLogout}>Confirm Logout</button>
-          <button onClick={this.onCancelAndCloseLogoutWindow} styleName="popup-logout-button">Stay</button>
+          <button onClick={this.onLogout} styleName="popup-logout-button-logout">Logout</button>
+          <button onClick={this.onCancelAndCloseLogoutWindow} styleName="popup-logout-button-stay">Stay</button>
         </div>
       </Modal>
     );

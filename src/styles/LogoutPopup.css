@@ -1,15 +1,39 @@
 .popup-window-title {
-    font-family: fantasy;
+    font-family: cursive;
     font-weight: 500;
     text-align: center;
+    margin-bottom: 5%;
 }
 
 .popup-window-button-container {
-    width: 90%;
+    width: 60%;
+    height: 40%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    margin-bottom: 3%;
 }
 
-.popup-logout-button {
+.popup-logout-button-logout {
+    flex: 1;
+    margin-right: 5%;
     margin-left: 5%;
+    background-color: #cb99c5;
+    border-radius: 10%;
+    margin: 0 10px 0 0;
+    color: white;
+    font-size: 25px;
+    height: 30%;
+}
+
+.popup-logout-button-stay {
+    flex: 1;
+    margin-right: 5%;
+    margin-left: 5%;
+    background-color: #82c8a0;
+    border-radius: 10%;
+    margin: 0 15px 0 0;
+    color: white;
+    font-size: 25px;
+    height: 30%;
 }
