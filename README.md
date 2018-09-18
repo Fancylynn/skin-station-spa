@@ -1,5 +1,5 @@
 # skin-station-spa
-[Link]: http://www.skinstationspa.fancylynn.com/
+Link: http://www.skinstationspa.fancylynn.com/
 
 ## Introduction
   This is a brand new website built for Skin Station Spa, a beauty chain store located in New York city. The main purpose is to refresh the company's website by using the latest technologies and make it as the company's name card.
